@@ -80,11 +80,19 @@
     },
     {
       "desc": "Mora Scribe's Thesis",
-      "tip": "Mora Scribe's Thesis is an armor set in the Elder Scrolls Online that can be obtained in Lucent Citadel. It is part of the Gold Road DLC pack. ncrease your Critical Damage done by 1% for every Minor Buff active on you, up to 12% Critical Damage done. ",
+      "tip": "Mora Scribe's Thesis is an armor set in the Elder Scrolls Online that can be obtained in Lucent Citadel. It is part of the Gold Road DLC pack. Increase your Critical Damage done by 1% for every Minor Buff active on you, up to 12% Critical Damage done. ",
       "value": 1,
       "count": 1,
       "checked": false,
       "countEditable": true
+    },
+    {
+      "desc": "Order's Wrath",
+      "tip": "Order's Wrath is an armor set in the Elder Scrolls Online that can be obtained in High Isle and Amenos. It is part of the High Isle DLC pack.",
+      "value": 8,
+      "count": 1,
+      "checked": false,
+      "countEditable": false
     },
     {
       "desc": "Herald of the Tome: Fated Fortune",
@@ -162,6 +170,14 @@
       "desc": "Two Handed Passive: Heavy Weapons (Axe)",
       "tip": "Heavy Weapons is a skill in the Two Handed skill line under the Weapon category in the Elder Scrolls Online. Axes increase your Critical Damage done by 12%. ",
       "value": 12,
+      "count": 1,
+      "checked": false,
+      "countEditable": false
+    },
+    {
+      "desc": "The Shadow Mundus Stone",
+      "tip": "Increases Critical Damage and Healing by 17%",
+      "value": 17,
       "count": 1,
       "checked": false,
       "countEditable": false

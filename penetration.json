@@ -164,6 +164,14 @@
       "count": 1,
       "checked": false,
       "countEditable": true
+    },
+    {
+      "desc": "The Lover Mundus Stone",
+      "tip": "Increases Physical and Spell Penetration by 4489",
+      "value": 4489,
+      "count": 1,
+      "checked": false,
+      "countEditable": false
     }
   ]
 }
