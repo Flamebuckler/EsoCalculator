@@ -19,7 +19,7 @@
       "tip": "Minor Force is a buff and increases your critical damage. E.g. Barbed Trap or Velothi Ur-Mage's Amulet",
       "value": 10,
       "count": 1,
-      "checked": true,
+      "checked": false,
       "countEditable": false
     },
     {
