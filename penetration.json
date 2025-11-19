@@ -1,169 +1,169 @@
 {
-	"meta": {
-		"formatAsPercent": false,
-		"title": "Penetration Calculator",
-		"summaryText": "Total Penetration (max 18.200): "
-	},
-	"items": [
-		{
-			"desc": "Major Breach",
-			"tip": "Major Breach is a debuff and reduces the Physical and Spell Resistance of an enemy.",
-			"value": 5948,
-			"count": 1,
-			"checked": true,
-			"countEditable": false
-		},
-		{
-			"desc": "Minor Breach",
-			"tip": "Minor Breach is a debuff and reduces the Physical and&nbsp; Spell Resistance of an enemy.",
-			"value": 2974,
-			"count": 1,
-			"checked": true,
-			"countEditable": false
-		},
-		{
-			"desc": "Legendary Infused Crusher Enchant",
-			"tip": "Glyph of Crushing is an enchanting glyph in The Elder Scrolls Online. It can be used to add a Crusher Enchantment",
-			"value": 2108,
-			"count": 1,
-			"checked": true,
-			"countEditable": false
-		},
-		{
-			"desc": "Velothi Ur-Mage's Amulet",
-			"tip": "Velothi Ur-Mage's Amulet is an armor set in the Elder Scrolls Online that can be obtained in Telvanni Peninsula. It is part of the Necrom DLC pack.",
-			"value": 1650,
-			"count": 1,
-			"checked": true,
-			"countEditable": false
-		},
-		{
-			"desc": "Roar of Alkosh",
-			"tip": "Roar of Alkosh is an armor set in the Elder Scrolls Online that can be obtained in Maw of Lorkhaj. It is part of the Thieves Guild DLC pack.",
-			"value": 6000,
-			"count": 1,
-			"checked": false,
-			"countEditable": false
-		},
-		{
-			"desc": "Crimson Oath's Rive",
-			"tip": "Crimson Oath's Rive is an armor set in the Elder Scrolls Online that can be obtained in The Dread Cellar. It is part of the Waking Flame DLC pack.",
-			"value": 3541,
-			"count": 1,
-			"checked": false,
-			"countEditable": false
-		},
-		{
-			"desc": "Tremorscale",
-			"tip": "Tremorscale is an armor set in the Elder Scrolls Online that can be obtained in Volenfell. It is part of the base game.",
-			"value": 2640,
-			"count": 1,
-			"checked": false,
-			"countEditable": false
-		},
-		{
-			"desc": "Runic Sunder",
-			"tip": "Runic Sunder is a skill in the Soldier of Apocrypha skill line under the Arcanist category in the Elder Scrolls Online.",
-			"value": 2200,
-			"count": 1,
-			"checked": false,
-			"countEditable": false
-		},
-		{
-			"desc": "Crystal Weapon",
-			"tip": "Crystal Weapon is a skill in the Dark Magic skill line under the Sorcerer category in the Elder Scrolls Online.",
-			"value": 1000,
-			"count": 1,
-			"checked": false,
-			"countEditable": false
-		},
-		{
-			"desc": "Shattered Fate",
-			"tip": "Shattered Fate is an armor set in the Elder Scrolls Online that can be obtained in Telvanni Peninsula. It is part of the Necrom DLC pack.",
-			"value": 7918,
-			"count": 1,
-			"checked": false,
-			"countEditable": false
-		},
-		{
-			"desc": "Wood Elf Passive: Hunter's Eye",
-			"tip": "Hunter's Eye is a skill in the Wood Elf Skills skill line under the Racial category in the Elder Scrolls Online.",
-			"value": 950,
-			"count": 1,
-			"checked": false,
-			"countEditable": false
-		},
-		{
-			"desc": "Grave Lord Passive: Dismember",
-			"tip": "Dismember is a skill in the Grave Lord skill line under the Necromancer category in the Elder Scrolls Online.",
-			"value": 3271,
-			"count": 1,
-			"checked": false,
-			"countEditable": false
-		},
-		{
-			"desc": "Herald of the Tome Passive: Splintered Secrets",
-			"tip": "Splintered Secrets is a skill in the Herald of the Tome skill line under the Arcanist category in the Elder Scrolls Online. Increase your Physical and Spell Penetration by 1240 per Herald of the Tome ability slotted.",
-			"value": 1240,
-			"count": 2,
-			"checked": false,
-			"countEditable": true
-		},
-		{
-			"desc": "Light Armor Passive: Concentration",
-			"tip": "Concentration is a skill in the Light Armor skill line under the Armor category in the Elder Scrolls Online. Increases your Physical and Spell Penetration by 939 for each piece of Light Armor worn.",
-			"value": 939,
-			"count": 1,
-			"checked": false,
-			"countEditable": true
-		},
-		{
-			"desc": "Armor Set Penetration Bonus",
-			"tip": "Armor Set Penetration Bonus",
-			"value": 1487,
-			"count": 1,
-			"checked": false,
-			"countEditable": true
-		},
-		{
-			"desc": "Champion Point Passive: Piercing",
-			"tip": "Piercing is a Champion Point star in the Warfare discipline in the Elder Scrolls Online. Grants 350 Offensive Penetration per stage.",
-			"value": 350,
-			"count": 2,
-			"checked": true,
-			"countEditable": true
-		},
-		{
-			"desc": "Champion Point: Force of Nature",
-			"tip": "Force of Nature is a Champion Point star in the Warfare discipline in the Elder Scrolls Online. Increases your Offensive Penetration by 660 for every status effect your target has. ",
-			"value": 660,
-			"count": 1,
-			"checked": false,
-			"countEditable": true
-		},
-		{
-			"desc": "Dual Wield Passive: Twin Blade and Blunt (Mace)",
-			"tip": "Twin Blade and Blunt is a skill in the Dual Wield skill line under the Weapon category in the Elder Scrolls Online. Each mace increases your Offensive Penetration by 1487.",
-			"value": 1487,
-			"count": 1,
-			"checked": false,
-			"countEditable": true
-		},
-		{
-			"desc": "Two Handed Passive: Heavy Weapons (Mace)",
-			"tip": "Heavy Weapons is a skill in the Two Handed skill line under the Weapon category in the Elder Scrolls Online. Maces increase your Offensive Penetration by 2974.",
-			"value": 2974,
-			"count": 1,
-			"checked": false,
-			"countEditable": false
-		},
-		{
-			"desc": "Sharpened Weapon",
-			"tip": "Sharpened is an item trait in the Elder Scrolls Online that can be found on wearable gear. Increases Physical and Spell Penetration by 1638.",
-			"value": 1638,
-			"count": 1,
-			"checked": false,
-			"countEditable": true
-		}
-	]
+  "meta": {
+    "formatAsPercent": false,
+    "title": "Penetration Calculator",
+    "summaryText": "Total Penetration (max 18.200): "
+  },
+  "items": [
+    {
+      "desc": "Major Breach",
+      "tip": "Major Breach is a debuff and reduces the Physical and Spell Resistance of an enemy.",
+      "value": 5948,
+      "count": 1,
+      "checked": true,
+      "countEditable": false
+    },
+    {
+      "desc": "Minor Breach",
+      "tip": "Minor Breach is a debuff and reduces the Physical and&nbsp; Spell Resistance of an enemy.",
+      "value": 2974,
+      "count": 1,
+      "checked": true,
+      "countEditable": false
+    },
+    {
+      "desc": "Legendary Infused Crusher Enchant",
+      "tip": "Glyph of Crushing is an enchanting glyph in The Elder Scrolls Online. It can be used to add a Crusher Enchantment",
+      "value": 2108,
+      "count": 1,
+      "checked": true,
+      "countEditable": false
+    },
+    {
+      "desc": "Velothi Ur-Mage's Amulet",
+      "tip": "Velothi Ur-Mage's Amulet is an armor set in the Elder Scrolls Online that can be obtained in Telvanni Peninsula. It is part of the Necrom DLC pack.",
+      "value": 1650,
+      "count": 1,
+      "checked": true,
+      "countEditable": false
+    },
+    {
+      "desc": "Roar of Alkosh",
+      "tip": "Roar of Alkosh is an armor set in the Elder Scrolls Online that can be obtained in Maw of Lorkhaj. It is part of the Thieves Guild DLC pack.",
+      "value": 6000,
+      "count": 1,
+      "checked": false,
+      "countEditable": false
+    },
+    {
+      "desc": "Crimson Oath's Rive",
+      "tip": "Crimson Oath's Rive is an armor set in the Elder Scrolls Online that can be obtained in The Dread Cellar. It is part of the Waking Flame DLC pack.",
+      "value": 3541,
+      "count": 1,
+      "checked": false,
+      "countEditable": false
+    },
+    {
+      "desc": "Tremorscale",
+      "tip": "Tremorscale is an armor set in the Elder Scrolls Online that can be obtained in Volenfell. It is part of the base game.",
+      "value": 2640,
+      "count": 1,
+      "checked": false,
+      "countEditable": false
+    },
+    {
+      "desc": "Runic Sunder",
+      "tip": "Runic Sunder is a skill in the Soldier of Apocrypha skill line under the Arcanist category in the Elder Scrolls Online.",
+      "value": 2200,
+      "count": 1,
+      "checked": false,
+      "countEditable": false
+    },
+    {
+      "desc": "Crystal Weapon",
+      "tip": "Crystal Weapon is a skill in the Dark Magic skill line under the Sorcerer category in the Elder Scrolls Online.",
+      "value": 1000,
+      "count": 1,
+      "checked": false,
+      "countEditable": false
+    },
+    {
+      "desc": "Shattered Fate",
+      "tip": "Shattered Fate is an armor set in the Elder Scrolls Online that can be obtained in Telvanni Peninsula. It is part of the Necrom DLC pack.",
+      "value": 7918,
+      "count": 1,
+      "checked": false,
+      "countEditable": false
+    },
+    {
+      "desc": "Wood Elf Passive: Hunter's Eye",
+      "tip": "Hunter's Eye is a skill in the Wood Elf Skills skill line under the Racial category in the Elder Scrolls Online.",
+      "value": 950,
+      "count": 1,
+      "checked": false,
+      "countEditable": false
+    },
+    {
+      "desc": "Grave Lord Passive: Dismember",
+      "tip": "Dismember is a skill in the Grave Lord skill line under the Necromancer category in the Elder Scrolls Online.",
+      "value": 3271,
+      "count": 1,
+      "checked": false,
+      "countEditable": false
+    },
+    {
+      "desc": "Herald of the Tome Passive: Splintered Secrets",
+      "tip": "Splintered Secrets is a skill in the Herald of the Tome skill line under the Arcanist category in the Elder Scrolls Online. Increase your Physical and Spell Penetration by 1240 per Herald of the Tome ability slotted.",
+      "value": 1240,
+      "count": 2,
+      "checked": false,
+      "countEditable": true
+    },
+    {
+      "desc": "Light Armor Passive: Concentration",
+      "tip": "Concentration is a skill in the Light Armor skill line under the Armor category in the Elder Scrolls Online. Increases your Physical and Spell Penetration by 939 for each piece of Light Armor worn.",
+      "value": 939,
+      "count": 1,
+      "checked": false,
+      "countEditable": true
+    },
+    {
+      "desc": "Armor Set Penetration Bonus",
+      "tip": "Armor Set Penetration Bonus",
+      "value": 1487,
+      "count": 1,
+      "checked": false,
+      "countEditable": true
+    },
+    {
+      "desc": "Champion Point Passive: Piercing",
+      "tip": "Piercing is a Champion Point star in the Warfare discipline in the Elder Scrolls Online. Grants 350 Offensive Penetration per stage.",
+      "value": 350,
+      "count": 2,
+      "checked": true,
+      "countEditable": true
+    },
+    {
+      "desc": "Champion Point: Force of Nature",
+      "tip": "Force of Nature is a Champion Point star in the Warfare discipline in the Elder Scrolls Online. Increases your Offensive Penetration by 660 for every status effect your target has. ",
+      "value": 660,
+      "count": 1,
+      "checked": false,
+      "countEditable": true
+    },
+    {
+      "desc": "Dual Wield Passive: Twin Blade and Blunt (Mace)",
+      "tip": "Twin Blade and Blunt is a skill in the Dual Wield skill line under the Weapon category in the Elder Scrolls Online. Each mace increases your Offensive Penetration by 1487.",
+      "value": 1487,
+      "count": 1,
+      "checked": false,
+      "countEditable": true
+    },
+    {
+      "desc": "Two Handed Passive: Heavy Weapons (Mace)",
+      "tip": "Heavy Weapons is a skill in the Two Handed skill line under the Weapon category in the Elder Scrolls Online. Maces increase your Offensive Penetration by 2974.",
+      "value": 2974,
+      "count": 1,
+      "checked": false,
+      "countEditable": false
+    },
+    {
+      "desc": "Sharpened Weapon",
+      "tip": "Sharpened is an item trait in the Elder Scrolls Online that can be found on wearable gear. Increases Physical and Spell Penetration by 1638.",
+      "value": 1638,
+      "count": 1,
+      "checked": false,
+      "countEditable": true
+    }
+  ]
 }
