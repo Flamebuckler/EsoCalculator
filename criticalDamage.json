@@ -1,170 +1,170 @@
 {
-	"meta": {
-		"formatAsPercent": true,
-		"title": "Critical Damage Calculator",
-		"summaryText": "Total Critical Damage (max 125%): "
-	},
-	"items": [
-		{
-			"desc": "Base Character Critical Damage",
-			"tip": "Base character Critical Damage.",
-			"value": 50,
-			"count": 1,
-			"checked": true,
-			"countEditable": false,
-			"selectable": false
-		},
-		{
-			"desc": "Minor Force",
-			"tip": "Minor Force is a buff and increases your critical damage. E.g. Barbed Trap or Velothi Ur-Mage's Amulet",
-			"value": 10,
-			"count": 1,
-			"checked": true,
-			"countEditable": false
-		},
-		{
-			"desc": "Major Force",
-			"tip": "Major Force is a buff and increases your critical damage. E.g. Aggressive Horn",
-			"value": 20,
-			"count": 1,
-			"checked": false,
-			"countEditable": false
-		},
-		{
-			"desc": "Minor Brittle",
-			"tip": "Minor Brittle is a debuff and increases the target's critical damage taken. Applying Chilled while actively holding a Frost Staff applies Minor Brittle. Note that the Staff must be on your active bar when Chilled is applied for this to proc. Or e.g Rune of the Colorless Pool",
-			"value": 10,
-			"count": 1,
-			"checked": false,
-			"countEditable": false
-		},
-		{
-			"desc": "Major Brittle",
-			"tip": "Major Brittle is a debuff and increases the target's critical damage taken. E.g Nunatak",
-			"value": 20,
-			"count": 1,
-			"checked": false,
-			"countEditable": false
-		},
-		{
-			"desc": "Elemental Catalyst",
-			"tip": "Elemental Catalyst is an armor set in the Elder Scrolls Online that can be obtained in Stone Garden. It is part of the Stonethorn DLC pack. Whenever you deal Flame, Shock, or Frost Damage, you apply a stack of Flame, Shock, or Frost Weakness to the enemy for 3 seconds. Each stack of an Elemental Weakness increases their Critical Damage taken by 5%. An enemy can only have one stack of each Elemental Weakness at a time.",
-			"value": 5,
-			"count": 3,
-			"checked": false,
-			"countEditable": false
-		},
-		{
-			"desc": "Lucent Echoes",
-			"tip": "Lucent Echoes is an armor set in the Elder Scrolls Online that can be obtained in Lucent Citadel. It is part of the Gold Road DLC pack.",
-			"value": 11,
-			"count": 1,
-			"checked": false,
-			"countEditable": false
-		},
-		{
-			"desc": "Khajiit Passive: Feline Ambush",
-			"tip": "Feline Ambush is a skill in the Khajiit Skills skill line under the Racial category in the Elder Scrolls Online.",
-			"value": 12,
-			"count": 1,
-			"checked": false,
-			"countEditable": false
-		},
-		{
-			"desc": "Sul-Xan's Torment",
-			"tip": "Sul-Xan's Torment is an armor set in the Elder Scrolls Online that can be obtained in Rockgrove. It is part of the Blackwood DLC pack.",
-			"value": 12,
-			"count": 1,
-			"checked": false,
-			"countEditable": false
-		},
-		{
-			"desc": "Mora Scribe's Thesis",
-			"tip": "Mora Scribe's Thesis is an armor set in the Elder Scrolls Online that can be obtained in Lucent Citadel. It is part of the Gold Road DLC pack. ncrease your Critical Damage done by 1% for every Minor Buff active on you, up to 12% Critical Damage done. ",
-			"value": 1,
-			"count": 1,
-			"checked": false,
-			"countEditable": true
-		},
-		{
-			"desc": "Herald of the Tome: Fated Fortune",
-			"tip": "Fated Fortune is a skill in the Herald of the Tome skill line under the Arcanist category in the Elder Scrolls Online. Warp fate when you generate or consume Crux, increasing your Critical Damage and Critical Healing by 12% for 7 seconds. ",
-			"value": 12,
-			"count": 1,
-			"checked": false,
-			"countEditable": false
-		},
-		{
-			"desc": "Assassination: Hemorrhage",
-			"tip": "Hemorrhage is a skill in the Assassination skill line under the Nightblade category in the Elder Scrolls Online.",
-			"value": 10,
-			"count": 1,
-			"checked": false,
-			"countEditable": false
-		},
-		{
-			"desc": "Aedric Spear: Piercing Spear",
-			"tip": "Piercing Spear is a skill in the Aedric Spear skill line under the Templar category in the Elder Scrolls Online.",
-			"value": 12,
-			"count": 1,
-			"checked": false,
-			"countEditable": false
-		},
-		{
-			"desc": "Animal Companions: Advanced Species",
-			"tip": "Advanced Species is a skill in the Animal Companions skill line under the Warden category in the Elder Scrolls Online. Increases your Critical Damage by 5% for each Animal Companion ability slotted. ",
-			"value": 5,
-			"count": 1,
-			"checked": false,
-			"countEditable": true
-		},
-		{
-			"desc": "Medium Armor Passive: Dexterity",
-			"tip": "Dexterity is a skill in the Medium Armor skill line under the Armor category in the Elder Scrolls Online. Increases your Critical Damage and Healing done rating by 2% for every piece of Medium Armor equipped.",
-			"value": 2,
-			"count": 6,
-			"checked": false,
-			"countEditable": true
-		},
-		{
-			"desc": "Harpooner's Wading Kilt",
-			"tip": "Harpooner's Wading Kilt is an armor set in the Elder Scrolls Online. It is part of the Blackwood DLC pack.",
-			"value": 1,
-			"count": 10,
-			"checked": false,
-			"countEditable": true
-		},
-		{
-			"desc": "Fighting Finesse",
-			"tip": "Fighting Finesse is a Champion Point star in the Warfare discipline in the Elder Scrolls Online.",
-			"value": 4,
-			"count": 2,
-			"checked": false,
-			"countEditable": true
-		},
-		{
-			"desc": "Backstabber",
-			"tip": "Backstabber is a Champion Point star in the Warfare discipline in the Elder Scrolls Online.",
-			"value": 2,
-			"count": 5,
-			"checked": false,
-			"countEditable": true
-		},
-		{
-			"desc": "Dual Wield Passive: Twin Blade and Blunt (Axe)",
-			"tip": "Twin Blade and Blunt is a skill in the Dual Wield skill line under the Weapon category in the Elder Scrolls Online. Each axe increases your Critical Damage done by 6%.",
-			"value": 6,
-			"count": 1,
-			"checked": false,
-			"countEditable": true
-		},
-		{
-			"desc": "Two Handed Passive: Heavy Weapons (Axe)",
-			"tip": "Heavy Weapons is a skill in the Two Handed skill line under the Weapon category in the Elder Scrolls Online. Axes increase your Critical Damage done by 12%. ",
-			"value": 12,
-			"count": 1,
-			"checked": false,
-			"countEditable": false
-		}
-	]
+  "meta": {
+    "formatAsPercent": true,
+    "title": "Critical Damage Calculator",
+    "summaryText": "Total Critical Damage (max 125%): "
+  },
+  "items": [
+    {
+      "desc": "Base Character Critical Damage",
+      "tip": "Base character Critical Damage.",
+      "value": 50,
+      "count": 1,
+      "checked": true,
+      "countEditable": false,
+      "selectable": false
+    },
+    {
+      "desc": "Minor Force",
+      "tip": "Minor Force is a buff and increases your critical damage. E.g. Barbed Trap or Velothi Ur-Mage's Amulet",
+      "value": 10,
+      "count": 1,
+      "checked": true,
+      "countEditable": false
+    },
+    {
+      "desc": "Major Force",
+      "tip": "Major Force is a buff and increases your critical damage. E.g. Aggressive Horn",
+      "value": 20,
+      "count": 1,
+      "checked": false,
+      "countEditable": false
+    },
+    {
+      "desc": "Minor Brittle",
+      "tip": "Minor Brittle is a debuff and increases the target's critical damage taken. Applying Chilled while actively holding a Frost Staff applies Minor Brittle. Note that the Staff must be on your active bar when Chilled is applied for this to proc. Or e.g Rune of the Colorless Pool",
+      "value": 10,
+      "count": 1,
+      "checked": false,
+      "countEditable": false
+    },
+    {
+      "desc": "Major Brittle",
+      "tip": "Major Brittle is a debuff and increases the target's critical damage taken. E.g Nunatak",
+      "value": 20,
+      "count": 1,
+      "checked": false,
+      "countEditable": false
+    },
+    {
+      "desc": "Elemental Catalyst",
+      "tip": "Elemental Catalyst is an armor set in the Elder Scrolls Online that can be obtained in Stone Garden. It is part of the Stonethorn DLC pack. Whenever you deal Flame, Shock, or Frost Damage, you apply a stack of Flame, Shock, or Frost Weakness to the enemy for 3 seconds. Each stack of an Elemental Weakness increases their Critical Damage taken by 5%. An enemy can only have one stack of each Elemental Weakness at a time.",
+      "value": 5,
+      "count": 3,
+      "checked": false,
+      "countEditable": false
+    },
+    {
+      "desc": "Lucent Echoes",
+      "tip": "Lucent Echoes is an armor set in the Elder Scrolls Online that can be obtained in Lucent Citadel. It is part of the Gold Road DLC pack.",
+      "value": 11,
+      "count": 1,
+      "checked": false,
+      "countEditable": false
+    },
+    {
+      "desc": "Khajiit Passive: Feline Ambush",
+      "tip": "Feline Ambush is a skill in the Khajiit Skills skill line under the Racial category in the Elder Scrolls Online.",
+      "value": 12,
+      "count": 1,
+      "checked": false,
+      "countEditable": false
+    },
+    {
+      "desc": "Sul-Xan's Torment",
+      "tip": "Sul-Xan's Torment is an armor set in the Elder Scrolls Online that can be obtained in Rockgrove. It is part of the Blackwood DLC pack.",
+      "value": 12,
+      "count": 1,
+      "checked": false,
+      "countEditable": false
+    },
+    {
+      "desc": "Mora Scribe's Thesis",
+      "tip": "Mora Scribe's Thesis is an armor set in the Elder Scrolls Online that can be obtained in Lucent Citadel. It is part of the Gold Road DLC pack. ncrease your Critical Damage done by 1% for every Minor Buff active on you, up to 12% Critical Damage done. ",
+      "value": 1,
+      "count": 1,
+      "checked": false,
+      "countEditable": true
+    },
+    {
+      "desc": "Herald of the Tome: Fated Fortune",
+      "tip": "Fated Fortune is a skill in the Herald of the Tome skill line under the Arcanist category in the Elder Scrolls Online. Warp fate when you generate or consume Crux, increasing your Critical Damage and Critical Healing by 12% for 7 seconds. ",
+      "value": 12,
+      "count": 1,
+      "checked": false,
+      "countEditable": false
+    },
+    {
+      "desc": "Assassination: Hemorrhage",
+      "tip": "Hemorrhage is a skill in the Assassination skill line under the Nightblade category in the Elder Scrolls Online.",
+      "value": 10,
+      "count": 1,
+      "checked": false,
+      "countEditable": false
+    },
+    {
+      "desc": "Aedric Spear: Piercing Spear",
+      "tip": "Piercing Spear is a skill in the Aedric Spear skill line under the Templar category in the Elder Scrolls Online.",
+      "value": 12,
+      "count": 1,
+      "checked": false,
+      "countEditable": false
+    },
+    {
+      "desc": "Animal Companions: Advanced Species",
+      "tip": "Advanced Species is a skill in the Animal Companions skill line under the Warden category in the Elder Scrolls Online. Increases your Critical Damage by 5% for each Animal Companion ability slotted. ",
+      "value": 5,
+      "count": 1,
+      "checked": false,
+      "countEditable": true
+    },
+    {
+      "desc": "Medium Armor Passive: Dexterity",
+      "tip": "Dexterity is a skill in the Medium Armor skill line under the Armor category in the Elder Scrolls Online. Increases your Critical Damage and Healing done rating by 2% for every piece of Medium Armor equipped.",
+      "value": 2,
+      "count": 6,
+      "checked": false,
+      "countEditable": true
+    },
+    {
+      "desc": "Harpooner's Wading Kilt",
+      "tip": "Harpooner's Wading Kilt is an armor set in the Elder Scrolls Online. It is part of the Blackwood DLC pack.",
+      "value": 1,
+      "count": 10,
+      "checked": false,
+      "countEditable": true
+    },
+    {
+      "desc": "Fighting Finesse",
+      "tip": "Fighting Finesse is a Champion Point star in the Warfare discipline in the Elder Scrolls Online.",
+      "value": 4,
+      "count": 2,
+      "checked": false,
+      "countEditable": true
+    },
+    {
+      "desc": "Backstabber",
+      "tip": "Backstabber is a Champion Point star in the Warfare discipline in the Elder Scrolls Online.",
+      "value": 2,
+      "count": 5,
+      "checked": false,
+      "countEditable": true
+    },
+    {
+      "desc": "Dual Wield Passive: Twin Blade and Blunt (Axe)",
+      "tip": "Twin Blade and Blunt is a skill in the Dual Wield skill line under the Weapon category in the Elder Scrolls Online. Each axe increases your Critical Damage done by 6%.",
+      "value": 6,
+      "count": 1,
+      "checked": false,
+      "countEditable": true
+    },
+    {
+      "desc": "Two Handed Passive: Heavy Weapons (Axe)",
+      "tip": "Heavy Weapons is a skill in the Two Handed skill line under the Weapon category in the Elder Scrolls Online. Axes increase your Critical Damage done by 12%. ",
+      "value": 12,
+      "count": 1,
+      "checked": false,
+      "countEditable": false
+    }
+  ]
 }
