@@ -1,0 +1,41 @@
+{
+	"meta": {
+		"formatAsPercent": false,
+		"title": "Weapon Damage Calculator",
+		"summaryText": "Total Additional Weapon Damage: "
+	},
+	"items": [
+		{
+			"desc": "Major Courage",
+			"tip": "Major Courage is a buff and increases weapon damage and spell damage. Increases Weapon Damage and Spell Damage by 430. E.g. Spell Power Cure Set",
+			"value": 430,
+			"count": 1,
+			"checked": false,
+			"countEditable": false
+		},
+		{
+			"desc": "Minor Courage",
+			"tip": "Minor Courage is a buff and increases weapon damage and spell damage. Increases Weapon Damage and Spell Damage by 215. E.g. Claw of Yolnahkriin Set, Zenas' Empowering Disc Skill or via Scribing ",
+			"value": 215,
+			"count": 1,
+			"checked": false,
+			"countEditable": false
+		},
+		{
+			"desc": "Powerful Assault",
+			"tip": "Powerful Assault is an armor set in the Elder Scrolls Online that can be obtained in Imperial Sewers. It is part of the Imperial City DLC pack.",
+			"value": 307,
+			"count": 1,
+			"checked": false,
+			"countEditable": false
+		},
+		{
+			"desc": "Pearlescent Ward",
+			"tip": "Pearlescent Ward is an armor set in the Elder Scrolls Online that can be obtained in Dreadsail Reef. It is part of the High Isle DLC pack.",
+			"value": 180,
+			"count": 1,
+			"checked": false,
+			"countEditable": false
+		}
+	]
+}
