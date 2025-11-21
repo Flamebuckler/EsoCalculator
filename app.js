@@ -90,6 +90,11 @@ document.addEventListener("DOMContentLoaded", () => {
   function attachRowListeners(row) {
     const cb = row.querySelector(".row-check");
     const countInp = row.querySelector(".row-count");
+    // set tooltip showing max if present
+    if (countInp) {
+      const maxAttr = countInp.getAttribute("max") || row.getAttribute("data-max");
+      if (maxAttr) countInp.title = "Max: " + String(maxAttr);
+    }
     // only attach change listener when checkbox is enabled
     if (cb && !cb.disabled) cb.addEventListener("change", recompute);
     // only attach input listeners when the field is editable
@@ -107,13 +112,13 @@ document.addEventListener("DOMContentLoaded", () => {
     tr.setAttribute("data-value", String(value));
     if (typeof maxCount !== "undefined") tr.setAttribute("data-max", String(maxCount));
     tr.innerHTML = `
-			<td><input type="checkbox" class="row-check" ${checked ? "checked" : ""} ${selectable ? "" : "disabled"}></td>
-			<td><input type="number" class="row-count" min="0" step="1" value="${parseIntSafe(count)}" inputmode="numeric" pattern="\\d*" ${
-      typeof maxCount !== "undefined" ? 'max="' + String(maxCount) + '"' : ""
+            <td><input type="checkbox" class="row-check" ${checked ? "checked" : ""} ${selectable ? "" : "disabled"}></td>
+            <td><input type="number" class="row-count" min="0" step="1" value="${parseIntSafe(count)}" inputmode="numeric" pattern="\\d*" ${
+      typeof maxCount !== "undefined" ? 'max="' + String(maxCount) + '" title="Max: ' + String(maxCount) + '"' : ""
     } ${countEditable ? "" : 'readonly tabindex="-1" aria-readonly="true"'}></td>
-			<td class="desc">${getAnchor(desc, url)}<span class="info" data-tip="${escapeHtml(tip)}">i</span></td>
-			<td class="value">0</td>
-		`;
+            <td class="desc">${getAnchor(desc, url)}<span class="info" data-tip="${escapeHtml(tip)}">i</span></td>
+            <td class="value">0</td>
+        `;
 
     tbody.appendChild(tr);
 
