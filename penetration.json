@@ -60,6 +60,15 @@
       "url": "https://eso-hub.com/en/sets/crimson-oaths-rive"
     },
     {
+      "desc": "Shattered Fate",
+      "tip": "Shattered Fate is an armor set in the Elder Scrolls Online that can be obtained in Telvanni Peninsula. It is part of the Necrom DLC pack.",
+      "value": 7918,
+      "count": 1,
+      "checked": false,
+      "countEditable": false,
+      "url": "https://eso-hub.com/en/sets/shattered-fate"
+    },
+    {
       "desc": "Tremorscale",
       "tip": "Tremorscale is an armor set in the Elder Scrolls Online that can be obtained in Volenfell. It is part of the base game.",
       "value": 2640,
@@ -67,6 +76,14 @@
       "checked": false,
       "countEditable": false,
       "url": "https://eso-hub.com/en/sets/tremorscale"
+    },
+    {
+      "desc": "Armor Set Penetration Bonus",
+      "tip": "Armor Set Penetration Bonus",
+      "value": 1487,
+      "count": 1,
+      "checked": false,
+      "countEditable": true
     },
     {
       "desc": "Runic Sunder",
@@ -85,15 +102,6 @@
       "checked": false,
       "countEditable": false,
       "url": "https://eso-hub.com/en/skills/sorcerer/dark-magic/crystal-weapon"
-    },
-    {
-      "desc": "Shattered Fate",
-      "tip": "Shattered Fate is an armor set in the Elder Scrolls Online that can be obtained in Telvanni Peninsula. It is part of the Necrom DLC pack.",
-      "value": 7918,
-      "count": 1,
-      "checked": false,
-      "countEditable": false,
-      "url": "https://eso-hub.com/en/sets/shattered-fate"
     },
     {
       "desc": "Wood Elf Passive: Hunter's Eye",
@@ -130,14 +138,6 @@
       "checked": false,
       "countEditable": true,
       "url": "https://eso-hub.com/en/skills/armor/light-armor/concentration"
-    },
-    {
-      "desc": "Armor Set Penetration Bonus",
-      "tip": "Armor Set Penetration Bonus",
-      "value": 1487,
-      "count": 1,
-      "checked": false,
-      "countEditable": true
     },
     {
       "desc": "Champion Point Passive: Piercing",
