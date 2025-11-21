@@ -58,12 +58,32 @@ document.addEventListener("DOMContentLoaded", () => {
       if (val === "") {
         return;
       }
-      const digits = val.replace(/[^0-9]/g, "");
+      // strip non-digits
+      let digits = val.replace(/[^0-9]/g, "");
       if (digits !== val) {
         e.target.value = digits;
+        digits = e.target.value;
+      }
+      // enforce max if present on input
+      const maxAttr = e.target.getAttribute("max");
+      if (maxAttr) {
+        const max = parseInt(maxAttr, 10);
+        const cur = parseInt(digits || "0", 10);
+        if (Number.isFinite(max) && cur > max) {
+          e.target.value = String(max);
+        }
       }
     });
-    input.addEventListener("change", recompute);
+    // ensure clamp on change / keyup and then recompute
+    input.addEventListener("change", (e) => {
+      const maxAttr = e.target.getAttribute("max");
+      if (maxAttr) {
+        const max = parseInt(maxAttr, 10);
+        const cur = parseIntSafe(e.target.value);
+        if (Number.isFinite(max) && cur > max) e.target.value = String(max);
+      }
+      recompute();
+    });
     input.addEventListener("keyup", recompute);
   }
 
@@ -82,14 +102,15 @@ document.addEventListener("DOMContentLoaded", () => {
     return `<a href="${url}" target="_blank">${escapeHtml(desc)}</a> `;
   }
 
-  function createRow({ desc = "", value = 0, count = 0, checked = false, tip = "", countEditable = true, selectable = true, url = "" } = {}) {
+  function createRow({ desc = "", value = 0, count = 0, checked = false, tip = "", countEditable = true, selectable = true, url = "", maxCount } = {}) {
     const tr = document.createElement("tr");
     tr.setAttribute("data-value", String(value));
+    if (typeof maxCount !== "undefined") tr.setAttribute("data-max", String(maxCount));
     tr.innerHTML = `
 			<td><input type="checkbox" class="row-check" ${checked ? "checked" : ""} ${selectable ? "" : "disabled"}></td>
 			<td><input type="number" class="row-count" min="0" step="1" value="${parseIntSafe(count)}" inputmode="numeric" pattern="\\d*" ${
-      countEditable ? "" : 'readonly tabindex="-1" aria-readonly="true"'
-    }></td>
+      typeof maxCount !== "undefined" ? 'max="' + String(maxCount) + '"' : ""
+    } ${countEditable ? "" : 'readonly tabindex="-1" aria-readonly="true"'}></td>
 			<td class="desc">${getAnchor(desc, url)}<span class="info" data-tip="${escapeHtml(tip)}">i</span></td>
 			<td class="value">0</td>
 		`;
@@ -111,7 +132,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const countInp = tr.querySelector(".row-count");
     const cb = tr.querySelector(".row-check");
     const base = parseIntSafe(String(value));
-    const initialCount = parseIntSafe(countInp ? countInp.value : count);
+    // clamp initial count to maxCount when provided
+    const initialCountRaw = parseIntSafe(countInp ? countInp.value : count);
+    const maxAttr = countInp ? countInp.getAttribute("max") : null;
+    const initialCount = maxAttr ? Math.min(initialCountRaw, parseIntSafe(maxAttr)) : initialCountRaw;
+    if (countInp && String(initialCount) !== String(countInp.value)) countInp.value = String(initialCount);
     if (valueCell) {
       const initialTotal = cb && cb.checked ? base * initialCount : 0;
       valueCell.textContent = formatNumberForDisplay(initialTotal, formatAsPercent);
@@ -162,6 +187,7 @@ document.addEventListener("DOMContentLoaded", () => {
           url: item.url,
           countEditable: "countEditable" in item ? item.countEditable : true,
           selectable: "selectable" in item ? item.selectable : true,
+          maxCount: "maxCount" in item ? item.maxCount : undefined,
         })
       );
 

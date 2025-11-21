@@ -83,6 +83,7 @@
       "value": 1487,
       "count": 1,
       "checked": false,
+      "maxCount": 5,
       "countEditable": true
     },
     {
@@ -128,6 +129,7 @@
       "count": 2,
       "checked": false,
       "countEditable": true,
+      "maxCount": 6,
       "url": "https://eso-hub.com/en/skills/arcanist/herald-of-the-tome/splintered-secrets"
     },
     {
@@ -137,6 +139,7 @@
       "count": 1,
       "checked": false,
       "countEditable": true,
+      "maxCount": 7,
       "url": "https://eso-hub.com/en/skills/armor/light-armor/concentration"
     },
     {
@@ -146,6 +149,7 @@
       "count": 2,
       "checked": true,
       "countEditable": true,
+      "maxCount": 2,
       "url": "https://eso-hub.com/en/champion-points/star/piercing"
     },
     {
@@ -155,6 +159,7 @@
       "count": 1,
       "checked": false,
       "countEditable": true,
+      "maxCount": 6,
       "url": "https://eso-hub.com/en/champion-points/star/force-of-nature"
     },
     {
@@ -164,6 +169,7 @@
       "count": 1,
       "checked": false,
       "countEditable": true,
+      "maxCount": 2,
       "url": "https://eso-hub.com/en/skills/weapon/dual-wield/twin-blade-and-blunt"
     },
     {
@@ -182,6 +188,7 @@
       "count": 1,
       "checked": false,
       "countEditable": true,
+      "maxCount": 2,
       "url": "https://eso-hub.com/en/traits/weapon/sharpened"
     },
     {

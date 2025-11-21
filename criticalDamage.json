@@ -102,6 +102,7 @@
       "count": 10,
       "checked": false,
       "countEditable": true,
+      "maxCount": 10,
       "url": "https://eso-hub.com/en/sets/harpooners-wading-kilt"
     },
     {
@@ -147,6 +148,7 @@
       "count": 1,
       "checked": false,
       "countEditable": true,
+      "maxCount": 6,
       "url": "https://eso-hub.com/en/skills/warden/animal-companions/advanced-species"
     },
     {
@@ -156,6 +158,7 @@
       "count": 6,
       "checked": false,
       "countEditable": true,
+      "maxCount": 7,
       "url": "https://eso-hub.com/en/skills/armor/medium-armor/dexterity"
     },
     {
@@ -165,6 +168,7 @@
       "count": 2,
       "checked": false,
       "countEditable": true,
+      "maxCount": 2,
       "url": "https://eso-hub.com/en/champion-points/star/fighting-finesse"
     },
     {
@@ -174,6 +178,7 @@
       "count": 5,
       "checked": false,
       "countEditable": true,
+      "maxCount": 5,
       "url": "https://eso-hub.com/en/champion-points/star/backstabber"
     },
     {
@@ -183,6 +188,7 @@
       "count": 1,
       "checked": false,
       "countEditable": true,
+      "maxCount": 2,
       "url": "https://eso-hub.com/en/skills/weapon/dual-wield/twin-blade-and-blunt"
     },
     {
