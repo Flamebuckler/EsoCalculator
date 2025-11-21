@@ -20,7 +20,8 @@
       "value": 10,
       "count": 1,
       "checked": false,
-      "countEditable": false
+      "countEditable": false,
+      "url": "https://eso-hub.com/en/buffs-debuffs/minor-force"
     },
     {
       "desc": "Major Force",
@@ -28,7 +29,8 @@
       "value": 20,
       "count": 1,
       "checked": false,
-      "countEditable": false
+      "countEditable": false,
+      "url": "https://eso-hub.com/en/buffs-debuffs/major-force"
     },
     {
       "desc": "Minor Brittle",
@@ -36,7 +38,8 @@
       "value": 10,
       "count": 1,
       "checked": false,
-      "countEditable": false
+      "countEditable": false,
+      "url": "https://eso-hub.com/en/buffs-debuffs/minor-brittle"
     },
     {
       "desc": "Major Brittle",
@@ -44,7 +47,8 @@
       "value": 20,
       "count": 1,
       "checked": false,
-      "countEditable": false
+      "countEditable": false,
+      "url": "https://eso-hub.com/en/buffs-debuffs/major-brittle"
     },
     {
       "desc": "Elemental Catalyst",
@@ -52,7 +56,8 @@
       "value": 5,
       "count": 3,
       "checked": false,
-      "countEditable": false
+      "countEditable": false,
+      "url": "https://eso-hub.com/en/sets/elemental-catalyst"
     },
     {
       "desc": "Lucent Echoes",
@@ -60,15 +65,8 @@
       "value": 11,
       "count": 1,
       "checked": false,
-      "countEditable": false
-    },
-    {
-      "desc": "Khajiit Passive: Feline Ambush",
-      "tip": "Feline Ambush is a skill in the Khajiit Skills skill line under the Racial category in the Elder Scrolls Online.",
-      "value": 12,
-      "count": 1,
-      "checked": false,
-      "countEditable": false
+      "countEditable": false,
+      "url": "https://eso-hub.com/en/sets/lucent-echoes"
     },
     {
       "desc": "Sul-Xan's Torment",
@@ -76,7 +74,8 @@
       "value": 12,
       "count": 1,
       "checked": false,
-      "countEditable": false
+      "countEditable": false,
+      "url": "https://eso-hub.com/en/sets/sul-xans-torment"
     },
     {
       "desc": "Mora Scribe's Thesis",
@@ -84,7 +83,8 @@
       "value": 1,
       "count": 1,
       "checked": false,
-      "countEditable": true
+      "countEditable": true,
+      "url": "https://eso-hub.com/en/sets/mora-scribes-thesis"
     },
     {
       "desc": "Order's Wrath",
@@ -92,47 +92,8 @@
       "value": 8,
       "count": 1,
       "checked": false,
-      "countEditable": false
-    },
-    {
-      "desc": "Herald of the Tome: Fated Fortune",
-      "tip": "Fated Fortune is a skill in the Herald of the Tome skill line under the Arcanist category in the Elder Scrolls Online. Warp fate when you generate or consume Crux, increasing your Critical Damage and Critical Healing by 12% for 7 seconds. ",
-      "value": 12,
-      "count": 1,
-      "checked": false,
-      "countEditable": false
-    },
-    {
-      "desc": "Assassination: Hemorrhage",
-      "tip": "Hemorrhage is a skill in the Assassination skill line under the Nightblade category in the Elder Scrolls Online.",
-      "value": 10,
-      "count": 1,
-      "checked": false,
-      "countEditable": false
-    },
-    {
-      "desc": "Aedric Spear: Piercing Spear",
-      "tip": "Piercing Spear is a skill in the Aedric Spear skill line under the Templar category in the Elder Scrolls Online.",
-      "value": 12,
-      "count": 1,
-      "checked": false,
-      "countEditable": false
-    },
-    {
-      "desc": "Animal Companions: Advanced Species",
-      "tip": "Advanced Species is a skill in the Animal Companions skill line under the Warden category in the Elder Scrolls Online. Increases your Critical Damage by 5% for each Animal Companion ability slotted. ",
-      "value": 5,
-      "count": 1,
-      "checked": false,
-      "countEditable": true
-    },
-    {
-      "desc": "Medium Armor Passive: Dexterity",
-      "tip": "Dexterity is a skill in the Medium Armor skill line under the Armor category in the Elder Scrolls Online. Increases your Critical Damage and Healing done rating by 2% for every piece of Medium Armor equipped.",
-      "value": 2,
-      "count": 6,
-      "checked": false,
-      "countEditable": true
+      "countEditable": false,
+      "url": "https://eso-hub.com/en/sets/orders-wrath"
     },
     {
       "desc": "Harpooner's Wading Kilt",
@@ -140,7 +101,62 @@
       "value": 1,
       "count": 10,
       "checked": false,
-      "countEditable": true
+      "countEditable": true,
+      "url": "https://eso-hub.com/en/sets/harpooners-wading-kilt"
+    },
+    {
+      "desc": "Khajiit Passive: Feline Ambush",
+      "tip": "Feline Ambush is a skill in the Khajiit Skills skill line under the Racial category in the Elder Scrolls Online.",
+      "value": 12,
+      "count": 1,
+      "checked": false,
+      "countEditable": false,
+      "url": "https://eso-hub.com/en/skills/racial/khajiit-skills/feline-ambush"
+    },
+    {
+      "desc": "Herald of the Tome: Fated Fortune",
+      "tip": "Fated Fortune is a skill in the Herald of the Tome skill line under the Arcanist category in the Elder Scrolls Online. Warp fate when you generate or consume Crux, increasing your Critical Damage and Critical Healing by 12% for 7 seconds. ",
+      "value": 12,
+      "count": 1,
+      "checked": false,
+      "countEditable": false,
+      "url": "https://eso-hub.com/en/skills/arcanist/herald-of-the-tome/fated-fortune"
+    },
+    {
+      "desc": "Assassination: Hemorrhage",
+      "tip": "Hemorrhage is a skill in the Assassination skill line under the Nightblade category in the Elder Scrolls Online.",
+      "value": 10,
+      "count": 1,
+      "checked": false,
+      "countEditable": false,
+      "url": "https://eso-hub.com/en/skills/nightblade/assassination/hemorrhage"
+    },
+    {
+      "desc": "Aedric Spear: Piercing Spear",
+      "tip": "Piercing Spear is a skill in the Aedric Spear skill line under the Templar category in the Elder Scrolls Online.",
+      "value": 12,
+      "count": 1,
+      "checked": false,
+      "countEditable": false,
+      "url": "https://eso-hub.com/en/skills/templar/aedric-spear/piercing-spear"
+    },
+    {
+      "desc": "Animal Companions: Advanced Species",
+      "tip": "Advanced Species is a skill in the Animal Companions skill line under the Warden category in the Elder Scrolls Online. Increases your Critical Damage by 5% for each Animal Companion ability slotted. ",
+      "value": 5,
+      "count": 1,
+      "checked": false,
+      "countEditable": true,
+      "url": "https://eso-hub.com/en/skills/warden/animal-companions/advanced-species"
+    },
+    {
+      "desc": "Medium Armor Passive: Dexterity",
+      "tip": "Dexterity is a skill in the Medium Armor skill line under the Armor category in the Elder Scrolls Online. Increases your Critical Damage and Healing done rating by 2% for every piece of Medium Armor equipped.",
+      "value": 2,
+      "count": 6,
+      "checked": false,
+      "countEditable": true,
+      "url": "https://eso-hub.com/en/skills/armor/medium-armor/dexterity"
     },
     {
       "desc": "Fighting Finesse",
@@ -148,7 +164,8 @@
       "value": 4,
       "count": 2,
       "checked": false,
-      "countEditable": true
+      "countEditable": true,
+      "url": "https://eso-hub.com/en/champion-points/star/fighting-finesse"
     },
     {
       "desc": "Backstabber",
@@ -156,7 +173,8 @@
       "value": 2,
       "count": 5,
       "checked": false,
-      "countEditable": true
+      "countEditable": true,
+      "url": "https://eso-hub.com/en/champion-points/star/backstabber"
     },
     {
       "desc": "Dual Wield Passive: Twin Blade and Blunt (Axe)",
@@ -164,7 +182,8 @@
       "value": 6,
       "count": 1,
       "checked": false,
-      "countEditable": true
+      "countEditable": true,
+      "url": "https://eso-hub.com/en/skills/weapon/dual-wield/twin-blade-and-blunt"
     },
     {
       "desc": "Two Handed Passive: Heavy Weapons (Axe)",
@@ -172,7 +191,8 @@
       "value": 12,
       "count": 1,
       "checked": false,
-      "countEditable": false
+      "countEditable": false,
+      "url": "https://eso-hub.com/en/skills/weapon/two-handed/heavy-weapons"
     },
     {
       "desc": "The Shadow Mundus Stone",
@@ -180,7 +200,8 @@
       "value": 17,
       "count": 1,
       "checked": false,
-      "countEditable": false
+      "countEditable": false,
+      "url": "https://eso-hub.com/en/mundus-stones/the-shadow"
     }
   ]
 }
