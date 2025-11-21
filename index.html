@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
   <head>
+    <link rel="stylesheet" type="text/css" href="https://eso-hub.com/css/external/tooltips.css" />
+    <script src="https://eso-hub.com/js/external/tooltips.js" defer=""></script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>ESO Calculator</title>
@@ -10,12 +12,8 @@
     <main>
       <div id="controls">
         <button id="btn-list-pen" class="list-btn active">Penetration</button>
-        <button id="btn-list-critdamage" class="list-btn">
-          Critical Damage
-        </button>
-        <button id="btn-list-weapondamage" class="list-btn">
-          Weapon Damage
-        </button>
+        <button id="btn-list-critdamage" class="list-btn">Critical Damage</button>
+        <!--<button id="btn-list-weapondamage" class="list-btn">Weapon Damage</button>-->
       </div>
 
       <h1>ESO Calculator</h1>
@@ -34,9 +32,7 @@
         </tbody>
       </table>
 
-      <div id="summary">
-        <span id="summary-text">Gesamtsumme: </span><span id="total">0</span>
-      </div>
+      <div id="summary"><span id="summary-text">Gesamtsumme: </span><span id="total">0</span></div>
     </main>
 
     <script src="app.js"></script>

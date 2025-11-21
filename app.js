@@ -1,9 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const table = document.getElementById("items-table");
   if (!table) {
-    console.warn(
-      'No element with id "items-table" found. Aborting app.js initialization.'
-    );
+    console.warn('No element with id "items-table" found. Aborting app.js initialization.');
     return;
   }
   const tbody = table.querySelector("tbody");
@@ -44,9 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!cb || !countInp || !valueCell) return;
       const count = parseIntSafe(countInp.value);
       const dataVal = row.getAttribute("data-value");
-      const base = dataVal
-        ? parseIntSafe(dataVal)
-        : parseIntSafe(valueCell.textContent);
+      const base = dataVal ? parseIntSafe(dataVal) : parseIntSafe(valueCell.textContent);
       const rowTotal = cb.checked ? base * count : 0;
       // display per-row total, formatted as percent if needed
       valueCell.textContent = formatNumberForDisplay(rowTotal, formatAsPercent);
@@ -77,36 +73,39 @@ document.addEventListener("DOMContentLoaded", () => {
     // only attach change listener when checkbox is enabled
     if (cb && !cb.disabled) cb.addEventListener("change", recompute);
     // only attach input listeners when the field is editable
-    if (countInp && !countInp.hasAttribute("readonly"))
-      sanitizeNumberInput(countInp);
+    if (countInp && !countInp.hasAttribute("readonly")) sanitizeNumberInput(countInp);
   }
 
-  function createRow({
-    desc = "",
-    value = 0,
-    count = 0,
-    checked = false,
-    tip = "",
-    countEditable = true,
-    selectable = true,
-  } = {}) {
+  function getAnchor(desc, url) {
+    if (!url) return escapeHtml(desc);
+
+    return `<a href="${url}" target="_blank">${escapeHtml(desc)}</a> `;
+  }
+
+  function createRow({ desc = "", value = 0, count = 0, checked = false, tip = "", countEditable = true, selectable = true, url = "" } = {}) {
     const tr = document.createElement("tr");
     tr.setAttribute("data-value", String(value));
     tr.innerHTML = `
-			<td><input type="checkbox" class="row-check" ${checked ? "checked" : ""} ${
-      selectable ? "" : "disabled"
-    }></td>
-			<td><input type="number" class="row-count" min="0" step="1" value="${parseIntSafe(
-        count
-      )}" inputmode="numeric" pattern="\\d*" ${
+			<td><input type="checkbox" class="row-check" ${checked ? "checked" : ""} ${selectable ? "" : "disabled"}></td>
+			<td><input type="number" class="row-count" min="0" step="1" value="${parseIntSafe(count)}" inputmode="numeric" pattern="\\d*" ${
       countEditable ? "" : 'readonly tabindex="-1" aria-readonly="true"'
     }></td>
-			<td class="desc">${escapeHtml(desc)} <span class="info" data-tip="${escapeHtml(
-      tip
-    )}">i</span></td>
+			<td class="desc">${getAnchor(desc, url)}<span class="info" data-tip="${escapeHtml(tip)}">i</span></td>
 			<td class="value">0</td>
 		`;
+
     tbody.appendChild(tr);
+
+    const anchor = tr.querySelectorAll("a");
+    if (anchor.length) {
+      if (window.addEsoHubToolTip) {
+        anchor.forEach((a) => window.addEsoHubToolTip(a));
+      } else if (window.addEsoHubToolTipsToAll) {
+        //Fallback to bulk method if single method not available
+        window.addEsoHubToolTipsToAll();
+      }
+    }
+
     // set initial computed value for the row
     const valueCell = tr.querySelector(".value");
     const countInp = tr.querySelector(".row-count");
@@ -115,10 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const initialCount = parseIntSafe(countInp ? countInp.value : count);
     if (valueCell) {
       const initialTotal = cb && cb.checked ? base * initialCount : 0;
-      valueCell.textContent = formatNumberForDisplay(
-        initialTotal,
-        formatAsPercent
-      );
+      valueCell.textContent = formatNumberForDisplay(initialTotal, formatAsPercent);
     }
     attachRowListeners(tr);
     return tr;
@@ -163,6 +159,7 @@ document.addEventListener("DOMContentLoaded", () => {
           count: item.count,
           checked: item.checked,
           tip: item.tip,
+          url: item.url,
           countEditable: "countEditable" in item ? item.countEditable : true,
           selectable: "selectable" in item ? item.selectable : true,
         })
@@ -170,12 +167,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       recompute();
     } catch (err) {
-      console.warn(
-        "Could not load",
-        url,
-        "— falling back to embedded rows or default. Error:",
-        err
-      );
+      console.warn("Could not load", url, "— falling back to embedded rows or default. Error:", err);
     }
   }
 
@@ -193,33 +185,21 @@ document.addEventListener("DOMContentLoaded", () => {
       btnListPen.classList.toggle("active", btnListPen === activeBtn);
     }
     if (btnListCritDamage) {
-      btnListCritDamage.classList.toggle(
-        "active",
-        btnListCritDamage === activeBtn
-      );
+      btnListCritDamage.classList.toggle("active", btnListCritDamage === activeBtn);
     }
     if (btnListWeaponDamage) {
-      btnListWeaponDamage.classList.toggle(
-        "active",
-        btnListWeaponDamage === activeBtn
-      );
+      btnListWeaponDamage.classList.toggle("active", btnListWeaponDamage === activeBtn);
     }
   }
 
   if (btnListPen) {
-    btnListPen.addEventListener("click", () =>
-      loadAndSet("penetration.json", btnListPen)
-    );
+    btnListPen.addEventListener("click", () => loadAndSet("penetration.json", btnListPen));
   }
   if (btnListCritDamage) {
-    btnListCritDamage.addEventListener("click", () =>
-      loadAndSet("criticalDamage.json", btnListCritDamage)
-    );
+    btnListCritDamage.addEventListener("click", () => loadAndSet("criticalDamage.json", btnListCritDamage));
   }
   if (btnListWeaponDamage) {
-    btnListWeaponDamage.addEventListener("click", () =>
-      loadAndSet("weaponDamage.json", btnListWeaponDamage)
-    );
+    btnListWeaponDamage.addEventListener("click", () => loadAndSet("weaponDamage.json", btnListWeaponDamage));
   }
 
   // initial auto-load default list

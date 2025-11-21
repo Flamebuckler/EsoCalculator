@@ -11,7 +11,8 @@
       "value": 5948,
       "count": 1,
       "checked": true,
-      "countEditable": false
+      "countEditable": false,
+      "url": "https://eso-hub.com/en/buffs-debuffs/major-breach"
     },
     {
       "desc": "Minor Breach",
@@ -19,7 +20,8 @@
       "value": 2974,
       "count": 1,
       "checked": true,
-      "countEditable": false
+      "countEditable": false,
+      "url": "https://eso-hub.com/en/buffs-debuffs/minor-breach"
     },
     {
       "desc": "Legendary Infused Crusher Enchant",
@@ -27,7 +29,8 @@
       "value": 2108,
       "count": 1,
       "checked": true,
-      "countEditable": false
+      "countEditable": false,
+      "url": "https://eso-hub.com/en/enchanting-runes-and-glyphs/glyph/glyph-of-crushing/truly-superb-glyph-of-crushing"
     },
     {
       "desc": "Velothi Ur-Mage's Amulet",
@@ -35,7 +38,8 @@
       "value": 1650,
       "count": 1,
       "checked": true,
-      "countEditable": false
+      "countEditable": false,
+      "url": "https://eso-hub.com/en/sets/velothi-ur-mages-amulet"
     },
     {
       "desc": "Roar of Alkosh",
@@ -43,7 +47,8 @@
       "value": 6000,
       "count": 1,
       "checked": false,
-      "countEditable": false
+      "countEditable": false,
+      "url": "https://eso-hub.com/en/sets/roar-of-alkosh"
     },
     {
       "desc": "Crimson Oath's Rive",
@@ -51,7 +56,8 @@
       "value": 3541,
       "count": 1,
       "checked": false,
-      "countEditable": false
+      "countEditable": false,
+      "url": "https://eso-hub.com/en/sets/crimson-oaths-rive"
     },
     {
       "desc": "Tremorscale",
@@ -59,7 +65,8 @@
       "value": 2640,
       "count": 1,
       "checked": false,
-      "countEditable": false
+      "countEditable": false,
+      "url": "https://eso-hub.com/en/sets/tremorscale"
     },
     {
       "desc": "Runic Sunder",
@@ -67,7 +74,8 @@
       "value": 2200,
       "count": 1,
       "checked": false,
-      "countEditable": false
+      "countEditable": false,
+      "url": "https://eso-hub.com/en/skills/arcanist/soldier-of-apocrypha/runic-sunder"
     },
     {
       "desc": "Crystal Weapon",
@@ -75,7 +83,8 @@
       "value": 1000,
       "count": 1,
       "checked": false,
-      "countEditable": false
+      "countEditable": false,
+      "url": "https://eso-hub.com/en/skills/sorcerer/dark-magic/crystal-weapon"
     },
     {
       "desc": "Shattered Fate",
@@ -83,7 +92,8 @@
       "value": 7918,
       "count": 1,
       "checked": false,
-      "countEditable": false
+      "countEditable": false,
+      "url": "https://eso-hub.com/en/sets/shattered-fate"
     },
     {
       "desc": "Wood Elf Passive: Hunter's Eye",
@@ -91,7 +101,8 @@
       "value": 950,
       "count": 1,
       "checked": false,
-      "countEditable": false
+      "countEditable": false,
+      "url": "https://eso-hub.com/en/skills/racial/wood-elf-skills/hunters-eye"
     },
     {
       "desc": "Grave Lord Passive: Dismember",
@@ -99,7 +110,8 @@
       "value": 3271,
       "count": 1,
       "checked": false,
-      "countEditable": false
+      "countEditable": false,
+      "url": "https://eso-hub.com/en/skills/necromancer/grave-lord/dismember"
     },
     {
       "desc": "Herald of the Tome Passive: Splintered Secrets",
@@ -107,7 +119,8 @@
       "value": 1240,
       "count": 2,
       "checked": false,
-      "countEditable": true
+      "countEditable": true,
+      "url": "https://eso-hub.com/en/skills/arcanist/herald-of-the-tome/splintered-secrets"
     },
     {
       "desc": "Light Armor Passive: Concentration",
@@ -115,7 +128,8 @@
       "value": 939,
       "count": 1,
       "checked": false,
-      "countEditable": true
+      "countEditable": true,
+      "url": "https://eso-hub.com/en/skills/armor/light-armor/concentration"
     },
     {
       "desc": "Armor Set Penetration Bonus",
@@ -131,7 +145,8 @@
       "value": 350,
       "count": 2,
       "checked": true,
-      "countEditable": true
+      "countEditable": true,
+      "url": "https://eso-hub.com/en/champion-points/star/piercing"
     },
     {
       "desc": "Champion Point: Force of Nature",
@@ -139,7 +154,8 @@
       "value": 660,
       "count": 1,
       "checked": false,
-      "countEditable": true
+      "countEditable": true,
+      "url": "https://eso-hub.com/en/champion-points/star/force-of-nature"
     },
     {
       "desc": "Dual Wield Passive: Twin Blade and Blunt (Mace)",
@@ -147,7 +163,8 @@
       "value": 1487,
       "count": 1,
       "checked": false,
-      "countEditable": true
+      "countEditable": true,
+      "url": "https://eso-hub.com/en/skills/weapon/dual-wield/twin-blade-and-blunt"
     },
     {
       "desc": "Two Handed Passive: Heavy Weapons (Mace)",
@@ -155,7 +172,8 @@
       "value": 2974,
       "count": 1,
       "checked": false,
-      "countEditable": false
+      "countEditable": false,
+      "url": "https://eso-hub.com/en/skills/weapon/two-handed/heavy-weapons"
     },
     {
       "desc": "Sharpened Weapon",
@@ -163,7 +181,8 @@
       "value": 1638,
       "count": 1,
       "checked": false,
-      "countEditable": true
+      "countEditable": true,
+      "url": "https://eso-hub.com/en/traits/weapon/sharpened"
     },
     {
       "desc": "The Lover Mundus Stone",
@@ -171,7 +190,8 @@
       "value": 4489,
       "count": 1,
       "checked": false,
-      "countEditable": false
+      "countEditable": false,
+      "url": "https://eso-hub.com/en/mundus-stones/the-lover"
     }
   ]
 }
