@@ -5,6 +5,38 @@
     <script src="https://eso-hub.com/js/external/tooltips.js" defer=""></script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <script>
+      (function () {
+        // Simple runtime cache-busting for local assets on GitHub Pages.
+        // Appends ?v=<timestamp> to relative local CSS/JS files so browsers fetch fresh copies.
+        var v = Date.now();
+        // Update matching stylesheet hrefs (e.g. styles.css)
+        try {
+          var links = document.getElementsByTagName("link");
+          for (var i = 0; i < links.length; i++) {
+            var l = links[i];
+            if (l.rel === "stylesheet" && l.href && /(^|\/)styles\.css(\?|$)/.test(l.getAttribute("href"))) {
+              l.href = l.getAttribute("href").split("?")[0] + "?v=" + v;
+            }
+          }
+          // Update scripts with src matching app.js (will be encountered later in the document)
+          var scripts = document.getElementsByTagName("script");
+          for (var j = 0; j < scripts.length; j++) {
+            var s = scripts[j];
+            if (s.src && /(^|\/)app\.js(\?|$)/.test(s.getAttribute("src"))) {
+              s.src = s.getAttribute("src").split("?")[0] + "?v=" + v;
+            }
+          }
+        } catch (e) {
+          console.warn("cache-bust failed", e);
+        }
+        // Expose version for other scripts if needed
+        window.__cacheBust = v;
+      })();
+    </script>
     <title>ESO Calculator</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
