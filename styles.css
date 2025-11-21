@@ -140,7 +140,7 @@ input[type='number'] {
 /* visual hint for readonly count fields */
 input.row-count[readonly] {
 	background: rgba(255, 255, 255, 0.02);
-	color: rgba(255, 255, 255, 0.7);
+	color: rgba(154, 154, 154, 0.7);
 	cursor: default;
 }
 
