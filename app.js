@@ -14,6 +14,8 @@ document.addEventListener("DOMContentLoaded", () => {
     textContent: "",
   };
   let formatAsPercent = false;
+  // guard to avoid repeatedly calling the site's bulk tooltip initializer
+  let esoTooltipBulkRegistered = false;
 
   function formatNumberForDisplay(n, percent = false) {
     if (percent) {
@@ -90,10 +92,13 @@ document.addEventListener("DOMContentLoaded", () => {
   function attachRowListeners(row) {
     const cb = row.querySelector(".row-check");
     const countInp = row.querySelector(".row-count");
-    // set tooltip showing max if present
+    // set tooltip showing max if present (use same tooltip system as the "i" info)
     if (countInp) {
       const maxAttr = countInp.getAttribute("max") || row.getAttribute("data-max");
-      if (maxAttr) countInp.title = "Max: " + String(maxAttr);
+      if (maxAttr) {
+        countInp.setAttribute("data-tip", "Max: " + String(maxAttr));
+        registerTooltip(countInp);
+      }
     }
     // only attach change listener when checkbox is enabled
     if (cb && !cb.disabled) cb.addEventListener("change", recompute);
@@ -111,40 +116,83 @@ document.addEventListener("DOMContentLoaded", () => {
     const tr = document.createElement("tr");
     tr.setAttribute("data-value", String(value));
     if (typeof maxCount !== "undefined") tr.setAttribute("data-max", String(maxCount));
-    tr.innerHTML = `
-            <td><input type="checkbox" class="row-check" ${checked ? "checked" : ""} ${selectable ? "" : "disabled"}></td>
-            <td><input type="number" class="row-count" min="0" step="1" value="${parseIntSafe(count)}" inputmode="numeric" pattern="\\d*" ${
-      typeof maxCount !== "undefined" ? 'max="' + String(maxCount) + '" title="Max: ' + String(maxCount) + '"' : ""
-    } ${countEditable ? "" : 'readonly tabindex="-1" aria-readonly="true"'}></td>
-            <td class="desc">${getAnchor(desc, url)}<span class="info" data-tip="${escapeHtml(tip)}">i</span></td>
-            <td class="value">0</td>
-        `;
+
+    // cell 1: checkbox
+    const tdCheck = document.createElement("td");
+    const cb = document.createElement("input");
+    cb.type = "checkbox";
+    cb.className = "row-check";
+    if (checked) cb.checked = true;
+    if (!selectable) cb.disabled = true;
+    tdCheck.appendChild(cb);
+
+    // cell 2: count input
+    const tdCount = document.createElement("td");
+    const countInp = document.createElement("input");
+    countInp.type = "number";
+    countInp.className = "row-count";
+    countInp.min = "0";
+    countInp.step = "1";
+    countInp.value = String(parseIntSafe(count));
+    countInp.setAttribute("inputmode", "numeric");
+    countInp.setAttribute("pattern", "\\d*");
+    if (typeof maxCount !== "undefined") {
+      countInp.setAttribute("max", String(maxCount));
+      countInp.setAttribute("data-tip", "Max: " + String(maxCount));
+    }
+    if (!countEditable) {
+      countInp.setAttribute("readonly", "");
+      countInp.setAttribute("tabindex", "-1");
+      countInp.setAttribute("aria-readonly", "true");
+    }
+    tdCount.appendChild(countInp);
+
+    // cell 3: description + info
+    const tdDesc = document.createElement("td");
+    tdDesc.className = "desc";
+    if (url) {
+      const a = document.createElement("a");
+      a.href = url;
+      a.target = "_blank";
+      a.textContent = desc;
+      tdDesc.appendChild(a);
+    } else {
+      tdDesc.appendChild(document.createTextNode(desc));
+    }
+    const info = document.createElement("span");
+    info.className = "info";
+    if (tip) info.setAttribute("data-tip", tip);
+    info.textContent = "i";
+    tdDesc.appendChild(info);
+
+    // cell 4: value
+    const tdValue = document.createElement("td");
+    tdValue.className = "value";
+    tdValue.textContent = "0";
+
+    tr.appendChild(tdCheck);
+    tr.appendChild(tdCount);
+    tr.appendChild(tdDesc);
+    tr.appendChild(tdValue);
 
     tbody.appendChild(tr);
 
+    // register tooltips for any anchor(s)
     const anchor = tr.querySelectorAll("a");
     if (anchor.length) {
-      if (window.addEsoHubToolTip) {
-        anchor.forEach((a) => window.addEsoHubToolTip(a));
-      } else if (window.addEsoHubToolTipsToAll) {
-        //Fallback to bulk method if single method not available
-        window.addEsoHubToolTipsToAll();
-      }
+      anchor.forEach((a) => registerTooltip(a));
     }
 
     // set initial computed value for the row
-    const valueCell = tr.querySelector(".value");
-    const countInp = tr.querySelector(".row-count");
-    const cb = tr.querySelector(".row-check");
     const base = parseIntSafe(String(value));
     // clamp initial count to maxCount when provided
     const initialCountRaw = parseIntSafe(countInp ? countInp.value : count);
     const maxAttr = countInp ? countInp.getAttribute("max") : null;
     const initialCount = maxAttr ? Math.min(initialCountRaw, parseIntSafe(maxAttr)) : initialCountRaw;
     if (countInp && String(initialCount) !== String(countInp.value)) countInp.value = String(initialCount);
-    if (valueCell) {
+    if (tdValue) {
       const initialTotal = cb && cb.checked ? base * initialCount : 0;
-      valueCell.textContent = formatNumberForDisplay(initialTotal, formatAsPercent);
+      tdValue.textContent = formatNumberForDisplay(initialTotal, formatAsPercent);
     }
     attachRowListeners(tr);
     return tr;
@@ -247,8 +295,9 @@ document.addEventListener("DOMContentLoaded", () => {
     let scheduled = false;
     function checkPosition() {
       scheduled = false;
-      // consider we are at the bottom when the viewport bottom reaches the document bottom
-      const scrolledToBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
+      // consider we are at the bottom when the bottom of the main wrapper is within (or at) the viewport bottom
+      const mainRect = mainEl.getBoundingClientRect();
+      const scrolledToBottom = mainRect.bottom <= window.innerHeight + 2;
       if (scrolledToBottom) {
         summary.classList.add("in-main");
       } else {
