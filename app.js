@@ -14,8 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
     textContent: "",
   };
   let formatAsPercent = false;
-  // guard to avoid repeatedly calling the site's bulk tooltip initializer
-  let esoTooltipBulkRegistered = false;
 
   function formatNumberForDisplay(n, percent = false) {
     if (percent) {
@@ -92,7 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function attachRowListeners(row) {
     const cb = row.querySelector(".row-check");
     const countInp = row.querySelector(".row-count");
-    // set tooltip showing max if present (use same tooltip system as the "i" info)
+
     if (countInp) {
       const maxAttr = countInp.getAttribute("max") || row.getAttribute("data-max");
       if (maxAttr) {
@@ -129,6 +127,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // cell 2: count input
     const tdCount = document.createElement("td");
     const countInp = document.createElement("input");
+
     countInp.type = "number";
     countInp.className = "row-count";
     countInp.min = "0";
@@ -136,15 +135,17 @@ document.addEventListener("DOMContentLoaded", () => {
     countInp.value = String(parseIntSafe(count));
     countInp.setAttribute("inputmode", "numeric");
     countInp.setAttribute("pattern", "\\d*");
+
     if (typeof maxCount !== "undefined") {
       countInp.setAttribute("max", String(maxCount));
-      countInp.setAttribute("data-tip", "Max: " + String(maxCount));
+      countInp.setAttribute("title", "Max: " + String(maxCount));
     }
     if (!countEditable) {
       countInp.setAttribute("readonly", "");
       countInp.setAttribute("tabindex", "-1");
       countInp.setAttribute("aria-readonly", "true");
     }
+
     tdCount.appendChild(countInp);
 
     // cell 3: description + info
