@@ -235,6 +235,39 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // initial auto-load default list
   loadAndSet("penetration.json", btnListPen);
+
+  // Summary positioning: when scrolled all the way to the bottom of the page,
+  // keep the summary inside the `main` wrapper (10px from main's bottom).
+  // Otherwise keep it fixed to the viewport bottom.
+  (function setupSummaryPositioning() {
+    const summary = document.getElementById("summary");
+    const mainEl = document.querySelector("main");
+    if (!summary || !mainEl) return;
+
+    let scheduled = false;
+    function checkPosition() {
+      scheduled = false;
+      // consider we are at the bottom when the viewport bottom reaches the document bottom
+      const scrolledToBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
+      if (scrolledToBottom) {
+        summary.classList.add("in-main");
+      } else {
+        summary.classList.remove("in-main");
+      }
+    }
+
+    function onScrollOrResize() {
+      if (!scheduled) {
+        scheduled = true;
+        requestAnimationFrame(checkPosition);
+      }
+    }
+
+    window.addEventListener("scroll", onScrollOrResize, { passive: true });
+    window.addEventListener("resize", onScrollOrResize);
+    // initial check
+    onScrollOrResize();
+  })();
 });
 
 // small helper: escape text for insertion into innerHTML

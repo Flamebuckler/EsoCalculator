@@ -18,6 +18,10 @@ main {
 	max-width: 700px;
 	margin: 12px auto;
 	padding: 20px;
+	/* allow absolutely positioned children (summary when inside main) */
+	position: relative;
+	/* reserve space at the bottom so a fixed summary doesn't cover content */
+	padding-bottom: 120px;
 	background: var(--card);
 	border-radius: 8px;
 }
@@ -102,18 +106,42 @@ input.row-check:disabled {
 .info:hover::after {
 	opacity: 1;
 }
+
 .value {
 	text-align: right;
 	font-variant-numeric: tabular-nums;
 }
 #summary {
-	margin-top: 16px;
+	/*margin-top: 16px;*/
 	padding: 12px;
-	background: rgba(114, 114, 114, 0.12);
+	bottom: 10px;
+	background: rgb(49, 49, 49);
 	border-radius: 6px;
 	color: var(--accent);
 	font-weight: 600;
 	text-align: right;
+	/* keep summary visible at the bottom of the viewport by default */
+	position: fixed;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 1000;
+	width: calc(100% - 40px);
+	max-width: 660px;
+	box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+}
+
+/* When the page is scrolled fully to the bottom, keep the summary inside the main wrapper */
+#summary.in-main {
+	position: absolute;
+	/* 10px from the bottom of the main wrapper as requested */
+	bottom: 10px;
+	/* align inside main content area */
+	left: 20px;
+	right: 20px;
+	transform: none;
+	width: auto;
+	max-width: none;
+	box-shadow: 0 6px 16px rgba(0,0,0,0.35);
 }
 
 @media (max-width: 560px) {
@@ -123,6 +151,9 @@ input.row-check:disabled {
 	.info::after {
 		font-size: 12px;
 	}
+
+	/* reduce reserved bottom space on small screens */
+	main { padding-bottom: 88px; }
 }
 
 /* Remove number input spinners (Chrome, Edge, Safari) */
