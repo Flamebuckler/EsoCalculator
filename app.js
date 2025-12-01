@@ -280,8 +280,21 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // initial auto-load default list
-  loadAndSet("penetration.json", linkListPen);
+  // initial auto-load based on URL ?list=... so opening a link in a new tab/window works
+  (function initialLoadFromUrl() {
+    const params = new URLSearchParams(window.location.search);
+    const list = params.get("list");
+    let file = "penetration.json";
+    let active = linkListPen;
+    if (list === "criticalDamage") {
+      file = "criticalDamage.json";
+      active = linkListCritDamage || linkListPen;
+    } else if (list === "weaponDamage") {
+      file = "weaponDamage.json";
+      active = document.getElementById("link-list-weapondamage") || linkListPen;
+    }
+    loadAndSet(file, active);
+  })();
 
   // Summary positioning: when scrolled all the way to the bottom of the page,
   // keep the summary inside the `main` wrapper (10px from main's bottom).
