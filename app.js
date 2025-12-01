@@ -251,39 +251,37 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // list selector buttons (if present)
-  const btnListPen = document.getElementById("btn-list-pen");
-  const btnListCritDamage = document.getElementById("btn-list-critdamage");
-  const btnListWeaponDamage = document.getElementById("btn-list-weapondamage");
-
   const titleEl = document.querySelector("h1");
 
   async function loadAndSet(file, activeBtn) {
     await loadFromFile(file);
 
-    if (btnListPen) {
-      btnListPen.classList.toggle("active", btnListPen === activeBtn);
+    if (linkListPen) {
+      linkListPen.classList.toggle("active", linkListPen === activeBtn);
     }
-    if (btnListCritDamage) {
-      btnListCritDamage.classList.toggle("active", btnListCritDamage === activeBtn);
-    }
-    if (btnListWeaponDamage) {
-      btnListWeaponDamage.classList.toggle("active", btnListWeaponDamage === activeBtn);
+    if (linkListCritDamage) {
+      linkListCritDamage.classList.toggle("active", linkListCritDamage === activeBtn);
     }
   }
 
-  if (btnListPen) {
-    btnListPen.addEventListener("click", () => loadAndSet("penetration.json", btnListPen));
+  // additionally wire the new anchor links (if present) to perform the same action
+  const linkListPen = document.getElementById("link-list-pen");
+  const linkListCritDamage = document.getElementById("link-list-critdamage");
+  if (linkListPen) {
+    linkListPen.addEventListener("click", (e) => {
+      e.preventDefault();
+      loadAndSet("penetration.json", linkListPen);
+    });
   }
-  if (btnListCritDamage) {
-    btnListCritDamage.addEventListener("click", () => loadAndSet("criticalDamage.json", btnListCritDamage));
-  }
-  if (btnListWeaponDamage) {
-    btnListWeaponDamage.addEventListener("click", () => loadAndSet("weaponDamage.json", btnListWeaponDamage));
+  if (linkListCritDamage) {
+    linkListCritDamage.addEventListener("click", (e) => {
+      e.preventDefault();
+      loadAndSet("criticalDamage.json", linkListCritDamage);
+    });
   }
 
   // initial auto-load default list
-  loadAndSet("penetration.json", btnListPen);
+  loadAndSet("penetration.json", linkListPen);
 
   // Summary positioning: when scrolled all the way to the bottom of the page,
   // keep the summary inside the `main` wrapper (10px from main's bottom).
