@@ -12,15 +12,10 @@
       const workerUrl = "https://page-counter.flamebuckler.workers.dev";
       const pageId = "ESO-Calculator"; // Unique identifier for this page
 
-      async function increment(page) {
-        const res = await fetch(`${workerUrl}/increment?page=${encodeURIComponent(page)}`, {
-          method: "POST",
-          keepalive: true,
-        });
-        if (!res.ok) {
-          console.error("Increment failed", await res.text());
-        }
-      }
+      fetch(`${workerUrl}/increment?page=${encodeURIComponent(pageId)}`, {
+        method: "POST",
+        keepalive: true,
+      });
 
       (function () {
         // Simple runtime cache-busting for local assets on GitHub Pages.
