@@ -9,6 +9,19 @@
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
     <script>
+      const workerUrl = "https://page-counter.flamebuckler.workers.dev";
+      const pageId = "ESO-Calculator"; // Unique identifier for this page
+
+      async function increment(page) {
+        const res = await fetch(`${workerUrl}/increment?page=${encodeURIComponent(page)}`, {
+          method: "POST",
+          keepalive: true,
+        });
+        if (!res.ok) {
+          console.error("Increment failed", await res.text());
+        }
+      }
+
       (function () {
         // Simple runtime cache-busting for local assets on GitHub Pages.
         // Appends ?v=<timestamp> to relative local CSS/JS files so browsers fetch fresh copies.
