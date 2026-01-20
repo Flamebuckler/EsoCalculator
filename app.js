@@ -99,9 +99,18 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
     // only attach change listener when checkbox is enabled
-    if (cb && !cb.disabled) cb.addEventListener("change", recompute);
+    if (cb && !cb.disabled) {
+      cb.addEventListener("change", (e) => {
+        recompute();
+        saveState();
+      });
+    }
     // only attach input listeners when the field is editable
-    if (countInp && !countInp.hasAttribute("readonly")) sanitizeNumberInput(countInp);
+    if (countInp && !countInp.hasAttribute("readonly")) {
+      sanitizeNumberInput(countInp);
+      countInp.addEventListener("change", saveState);
+      countInp.addEventListener("keyup", saveState);
+    }
   }
 
   function getAnchor(desc, url) {
@@ -202,6 +211,46 @@ document.addEventListener("DOMContentLoaded", () => {
   // Attach to any existing rows (if present in DOM)
   tbody.querySelectorAll("tr").forEach(attachRowListeners);
 
+  // save current state to localStorage
+  function saveState() {
+    const currentList = window.currentListType || "penetration";
+    const state = [];
+    const rows = tbody.querySelectorAll("tr");
+    rows.forEach((row, index) => {
+      const cb = row.querySelector(".row-check");
+      const countInp = row.querySelector(".row-count");
+      state.push({
+        index: index,
+        checked: cb ? cb.checked : false,
+        count: countInp ? countInp.value : "0",
+      });
+    });
+    localStorage.setItem(`eso-calc-state-${currentList}`, JSON.stringify(state));
+  }
+
+  // restore state from localStorage
+  function restoreState() {
+    const currentList = window.currentListType || "penetration";
+    const saved = localStorage.getItem(`eso-calc-state-${currentList}`);
+    if (!saved) return;
+    try {
+      const state = JSON.parse(saved);
+      const rows = tbody.querySelectorAll("tr");
+      state.forEach((item) => {
+        if (item.index < rows.length) {
+          const row = rows[item.index];
+          const cb = row.querySelector(".row-check");
+          const countInp = row.querySelector(".row-count");
+          if (cb) cb.checked = item.checked;
+          if (countInp) countInp.value = item.count;
+        }
+      });
+      recompute();
+    } catch (e) {
+      console.warn("Could not restore state from localStorage:", e);
+    }
+  }
+
   // load from JSON (supports either an array of items or an object with metadata)
   async function loadFromFile(url = "/settings/penetration.json") {
     try {
@@ -246,6 +295,7 @@ document.addEventListener("DOMContentLoaded", () => {
       );
 
       recompute();
+      restoreState();
     } catch (err) {
       console.warn("Could not load", url, "— falling back to embedded rows or default. Error:", err);
     }
@@ -254,6 +304,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const titleEl = document.querySelector("h1");
 
   async function loadAndSet(file, activeBtn) {
+    // Set the current list type for localStorage
+    if (file.includes("criticalDamage")) {
+      window.currentListType = "criticalDamage";
+    } else {
+      window.currentListType = "penetration";
+    }
+
     await loadFromFile(file);
 
     if (linkListPen) {
@@ -290,6 +347,7 @@ document.addEventListener("DOMContentLoaded", () => {
       file = "/settings/criticalDamage.json";
       active = linkListCritDamage || linkListPen;
     }
+    window.currentListType = list === "criticalDamage" ? "criticalDamage" : "penetration";
     loadAndSet(file, active);
   })();
 
