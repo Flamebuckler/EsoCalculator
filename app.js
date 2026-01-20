@@ -203,7 +203,7 @@ document.addEventListener("DOMContentLoaded", () => {
   tbody.querySelectorAll("tr").forEach(attachRowListeners);
 
   // load from JSON (supports either an array of items or an object with metadata)
-  async function loadFromFile(url = "penetration.json") {
+  async function loadFromFile(url = "/settings/penetration.json") {
     try {
       const res = await fetch(url, { cache: "no-store" });
       if (!res.ok) throw new Error("HTTP " + res.status);
@@ -242,7 +242,7 @@ document.addEventListener("DOMContentLoaded", () => {
           countEditable: "countEditable" in item ? item.countEditable : true,
           selectable: "selectable" in item ? item.selectable : true,
           maxCount: "maxCount" in item ? item.maxCount : undefined,
-        })
+        }),
       );
 
       recompute();
@@ -270,13 +270,13 @@ document.addEventListener("DOMContentLoaded", () => {
   if (linkListPen) {
     linkListPen.addEventListener("click", (e) => {
       e.preventDefault();
-      loadAndSet("penetration.json", linkListPen);
+      loadAndSet("/settings/penetration.json", linkListPen);
     });
   }
   if (linkListCritDamage) {
     linkListCritDamage.addEventListener("click", (e) => {
       e.preventDefault();
-      loadAndSet("criticalDamage.json", linkListCritDamage);
+      loadAndSet("/settings/criticalDamage.json", linkListCritDamage);
     });
   }
 
@@ -284,14 +284,11 @@ document.addEventListener("DOMContentLoaded", () => {
   (function initialLoadFromUrl() {
     const params = new URLSearchParams(window.location.search);
     const list = params.get("list");
-    let file = "penetration.json";
+    let file = "/settings/penetration.json";
     let active = linkListPen;
     if (list === "criticalDamage") {
-      file = "criticalDamage.json";
+      file = "/settings/criticalDamage.json";
       active = linkListCritDamage || linkListPen;
-    } else if (list === "weaponDamage") {
-      file = "weaponDamage.json";
-      active = document.getElementById("link-list-weapondamage") || linkListPen;
     }
     loadAndSet(file, active);
   })();
