@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <link rel="stylesheet" type="text/css" href="https://eso-hub.com/css/external/tooltips.css" />
@@ -53,6 +53,7 @@
       <div id="controls">
         <a href="?list=penetration" id="link-list-pen" class="list-btn">Penetration</a>
         <a href="?list=criticalDamage" id="link-list-critdamage" class="list-btn">Critical Damage</a>
+        <!--<button id="share-btn" class="list-btn share">Share</button>-->
       </div>
 
       <h1>ESO Calculator</h1>
@@ -71,7 +72,10 @@
         </tbody>
       </table>
 
-      <div id="summary"><span id="summary-text">Gesamtsumme: </span><span id="total">0</span></div>
+      <div id="summary">
+        <div><span id="summary-text">Gesamtsumme: </span><span id="total">0</span></div>
+        <div id="save-text">(Selected values are stored in the lokal browser storage)</div>
+      </div>
     </main>
 
     <script src="utils.js"></script>

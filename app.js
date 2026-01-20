@@ -211,6 +211,36 @@ document.addEventListener("DOMContentLoaded", () => {
   // Attach to any existing rows (if present in DOM)
   tbody.querySelectorAll("tr").forEach(attachRowListeners);
 
+  // encode state for URL sharing
+  function encodeStateForUrl() {
+    const state = [];
+    const rows = tbody.querySelectorAll("tr");
+    rows.forEach((row, index) => {
+      const cb = row.querySelector(".row-check");
+      const countInp = row.querySelector(".row-count");
+      state.push({
+        index: index,
+        checked: cb ? cb.checked : false,
+        count: countInp ? countInp.value : "0",
+      });
+    });
+    // Encode as base64 for URL compatibility
+    const json = JSON.stringify(state);
+    return btoa(encodeURIComponent(json));
+  }
+
+  // get shareable URL with current state
+  function getShareableUrl() {
+    const encodedState = encodeStateForUrl();
+    const currentList = window.currentListType || "penetration";
+    const params = new URLSearchParams(window.location.search);
+    params.set("state", encodedState);
+    params.set("list", currentList);
+    const url = new URL(window.location);
+    url.search = params.toString();
+    return url.toString();
+  }
+
   // save current state to localStorage
   function saveState() {
     const currentList = window.currentListType || "penetration";
@@ -228,13 +258,41 @@ document.addEventListener("DOMContentLoaded", () => {
     localStorage.setItem(`eso-calc-state-${currentList}`, JSON.stringify(state));
   }
 
-  // restore state from localStorage
+  // restore state from URL or localStorage
   function restoreState() {
     const currentList = window.currentListType || "penetration";
-    const saved = localStorage.getItem(`eso-calc-state-${currentList}`);
-    if (!saved) return;
+    let state = null;
+
+    // First, try to restore from URL parameter
+    const params = new URLSearchParams(window.location.search);
+    const encodedState = params.get("state");
+    const urlListType = params.get("list");
+
+    // Only restore from URL if the list type matches
+    if (encodedState && (!urlListType || urlListType === currentList)) {
+      try {
+        const json = decodeURIComponent(atob(encodedState));
+        state = JSON.parse(json);
+      } catch (e) {
+        console.warn("Could not decode state from URL:", e);
+      }
+    }
+
+    // If URL state failed or didn't match, try localStorage
+    if (!state) {
+      const saved = localStorage.getItem(`eso-calc-state-${currentList}`);
+      if (saved) {
+        try {
+          state = JSON.parse(saved);
+        } catch (e) {
+          console.warn("Could not restore state from localStorage:", e);
+        }
+      }
+    }
+
+    // Apply the state if found
+    if (!state) return;
     try {
-      const state = JSON.parse(saved);
       const rows = tbody.querySelectorAll("tr");
       state.forEach((item) => {
         if (item.index < rows.length) {
@@ -247,7 +305,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
       recompute();
     } catch (e) {
-      console.warn("Could not restore state from localStorage:", e);
+      console.warn("Could not apply state:", e);
     }
   }
 
@@ -324,6 +382,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // additionally wire the new anchor links (if present) to perform the same action
   const linkListPen = document.getElementById("link-list-pen");
   const linkListCritDamage = document.getElementById("link-list-critdamage");
+  const shareBtn = document.getElementById("share-btn");
+
   if (linkListPen) {
     linkListPen.addEventListener("click", (e) => {
       e.preventDefault();
@@ -334,6 +394,28 @@ document.addEventListener("DOMContentLoaded", () => {
     linkListCritDamage.addEventListener("click", (e) => {
       e.preventDefault();
       loadAndSet("/settings/criticalDamage.json", linkListCritDamage);
+    });
+  }
+
+  if (shareBtn) {
+    shareBtn.addEventListener("click", () => {
+      const url = getShareableUrl();
+      if (url && navigator.clipboard) {
+        navigator.clipboard
+          .writeText(url)
+          .then(() => {
+            const originalText = shareBtn.textContent;
+            shareBtn.textContent = "Copied!";
+            setTimeout(() => {
+              shareBtn.textContent = originalText;
+            }, 2000);
+          })
+          .catch(() => {
+            alert("Failed to copy URL to clipboard");
+          });
+      } else {
+        alert("Clipboard not available. URL: " + url);
+      }
     });
   }
 
@@ -350,6 +432,10 @@ document.addEventListener("DOMContentLoaded", () => {
     window.currentListType = list === "criticalDamage" ? "criticalDamage" : "penetration";
     loadAndSet(file, active);
   })();
+
+  // Expose share functions globally after initialization
+  window.getShareableUrl = getShareableUrl;
+  window.getShareUrl = getShareableUrl;
 
   // Summary positioning: when scrolled all the way to the bottom of the page,
   // keep the summary inside the `main` wrapper (10px from main's bottom).
