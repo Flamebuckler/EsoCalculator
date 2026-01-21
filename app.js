@@ -310,7 +310,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // load from JSON (supports either an array of items or an object with metadata)
-  async function loadFromFile(url = "/settings/penetration.json") {
+  async function loadFromFile(url = "penetration.json") {
     try {
       const res = await fetch(url, { cache: "no-store" });
       if (!res.ok) throw new Error("HTTP " + res.status);
@@ -387,13 +387,13 @@ document.addEventListener("DOMContentLoaded", () => {
   if (linkListPen) {
     linkListPen.addEventListener("click", (e) => {
       e.preventDefault();
-      loadAndSet("/settings/penetration.json", linkListPen);
+      loadAndSet("penetration.json", linkListPen);
     });
   }
   if (linkListCritDamage) {
     linkListCritDamage.addEventListener("click", (e) => {
       e.preventDefault();
-      loadAndSet("/settings/criticalDamage.json", linkListCritDamage);
+      loadAndSet("criticalDamage.json", linkListCritDamage);
     });
   }
 
@@ -423,10 +423,10 @@ document.addEventListener("DOMContentLoaded", () => {
   (function initialLoadFromUrl() {
     const params = new URLSearchParams(window.location.search);
     const list = params.get("list");
-    let file = "/settings/penetration.json";
+    let file = "penetration.json";
     let active = linkListPen;
     if (list === "criticalDamage") {
-      file = "/settings/criticalDamage.json";
+      file = "criticalDamage.json";
       active = linkListCritDamage || linkListPen;
     }
     window.currentListType = list === "criticalDamage" ? "criticalDamage" : "penetration";
