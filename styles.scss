@@ -1,13 +1,5 @@
 @use 'node_modules/styles/src/main' as *;
 
-main {
-	margin: var(--space-md) auto;
-	padding: var(--space-md);
-	position: relative;
-	padding-bottom: 120px;
-	/* central card class already sets background and border-radius when applied */
-}
-
 input {
 	&[type='number'] {
 		width: 30px;
@@ -31,10 +23,11 @@ input {
 	}
 
 	&[type='checkbox'] {
-		width: 18px;
-		height: 18px;
-
-		// visually indicate disabled checkboxes
+		width: 15px;
+		height: 15px;
+		background-color: var(--color-accent);
+		margin-top: -2px;
+		vertical-align: middle; /* keep checkbox centered in its table cell */ // visually indicate disabled checkboxes
 		&.row-check:disabled {
 			opacity: 0.6;
 			cursor: not-allowed;
@@ -44,7 +37,7 @@ input {
 	&.row-count {
 		&[readonly] {
 			background: rgba(255, 255, 255, 0.02);
-			color: rgba(154, 154, 154, 0.7);
+			color: var(--color-muted);
 			cursor: default;
 
 			// ensure readonly count fields do not show a focus ring if focused programmatically
@@ -65,6 +58,12 @@ input {
 	}
 }
 
+.tool {
+	margin-bottom: 0px;
+	padding-top: 0.5em;
+	padding-bottom: 0.3em;
+}
+
 .info {
 	display: inline-block;
 	margin-left: var(--space-sm);
@@ -76,6 +75,7 @@ input {
 	text-align: center;
 	line-height: 19px;
 	font-size: 13px;
+	font-weight: 800;
 	cursor: pointer;
 
 	&::after {
@@ -102,6 +102,9 @@ input {
 	}
 }
 
+/* ensure value cells are always right-aligned, applying to the <td> element
+   as well as any child with class="value" */
+#items-table td.value,
 .value {
 	text-align: right;
 	font-variant-numeric: tabular-nums;
@@ -122,26 +125,17 @@ input {
 	transform: translateX(-50%);
 	z-index: 1000;
 	width: calc(100% - 40px);
-	max-width: 770px;
-
-	&.in-main {
-		position: absolute;
-		// 10px from the bottom of the main wrapper as requested
-		bottom: 10px;
-		// align inside main content area
-		left: var(--space-md);
-		right: var(--space-md);
-		transform: none;
-		width: auto;
-		max-width: none;
-		box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
-	}
+	max-width: 900px;
 }
 
 #save-text {
 	@extend .hint;
 	text-align: right;
 	font-weight: 300;
+}
+
+.card {
+	margin-bottom: 80px;
 }
 
 @media (max-width: 560px) {

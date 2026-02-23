@@ -319,14 +319,6 @@ button:active {
 }
 
 /* weitere module können hier ergänzt werden */
-main {
-  margin: var(--space-md) auto;
-  padding: var(--space-md);
-  position: relative;
-  padding-bottom: 120px;
-  /* central card class already sets background and border-radius when applied */
-}
-
 input[type=number] {
   width: 30px;
   text-align: center;
@@ -345,8 +337,11 @@ input[type=number] {
   appearance: textfield;
 }
 input[type=checkbox] {
-  width: 18px;
-  height: 18px;
+  width: 15px;
+  height: 15px;
+  background-color: var(--color-accent);
+  margin-top: -2px;
+  vertical-align: middle; /* keep checkbox centered in its table cell */
 }
 input[type=checkbox].row-check:disabled {
   opacity: 0.6;
@@ -354,7 +349,7 @@ input[type=checkbox].row-check:disabled {
 }
 input.row-count[readonly] {
   background: rgba(255, 255, 255, 0.02);
-  color: rgba(154, 154, 154, 0.7);
+  color: var(--color-muted);
   cursor: default;
 }
 input.row-count[readonly]:focus {
@@ -370,6 +365,12 @@ input.row-count[readonly]:focus {
   text-decoration: none;
 }
 
+.tool {
+  margin-bottom: 0px;
+  padding-top: 0.5em;
+  padding-bottom: 0.3em;
+}
+
 .info {
   display: inline-block;
   margin-left: var(--space-sm);
@@ -381,6 +382,7 @@ input.row-count[readonly]:focus {
   text-align: center;
   line-height: 19px;
   font-size: 13px;
+  font-weight: 800;
   cursor: pointer;
 }
 .info::after {
@@ -405,6 +407,9 @@ input.row-count[readonly]:focus {
   opacity: 1;
 }
 
+/* ensure value cells are always right-aligned, applying to the <td> element
+   as well as any child with class="value" */
+#items-table td.value,
 .value {
   text-align: right;
   font-variant-numeric: tabular-nums;
@@ -423,22 +428,16 @@ input.row-count[readonly]:focus {
   transform: translateX(-50%);
   z-index: 1000;
   width: calc(100% - 40px);
-  max-width: 770px;
-}
-#summary.in-main {
-  position: absolute;
-  bottom: 10px;
-  left: var(--space-md);
-  right: var(--space-md);
-  transform: none;
-  width: auto;
-  max-width: none;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+  max-width: 900px;
 }
 
 #save-text {
   text-align: right;
   font-weight: 300;
+}
+
+.card {
+  margin-bottom: 80px;
 }
 
 @media (max-width: 560px) {

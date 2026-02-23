@@ -73,44 +73,46 @@
 			<h1>ESO Calculator</h1>
 			<p>Calculate your values easily</p>
 		</header>
-		<main class="card">
-			<div
-				id="controls"
-				class="controls">
-				<a
-					href="?list=penetration"
-					id="link-list-pen"
-					class="tool"
-					>Penetration</a
-				>
-				<a
-					href="?list=criticalDamage"
-					id="link-list-critdamage"
-					class="tool"
-					>Critical Damage</a
-				>
-				<!--<button id="share-btn" class="list-btn share">Share</button>-->
-			</div>
+		<main class="container">
+			<div class="card">
+				<div
+					id="controls"
+					class="controls">
+					<a
+						href="?list=penetration"
+						id="link-list-pen"
+						class="tool"
+						><span class="tool-name">Penetration</span></a
+					>
+					<a
+						href="?list=criticalDamage"
+						id="link-list-critdamage"
+						class="tool"
+						><span class="tool-name">Critical Damage</span></a
+					>
+					<!--<button id="share-btn" class="list-btn share">Share</button>-->
+				</div>
 
-			<table
-				id="items-table"
-				class="results-table">
-				<thead>
-					<tr>
-						<th width="10"></th>
-						<th width="10"></th>
-						<th></th>
-						<th></th>
-					</tr>
-				</thead>
-				<tbody>
-					<!-- rows are populated from items.json via app.js -->
-				</tbody>
-			</table>
+				<table
+					id="items-table"
+					class="results-table">
+					<thead>
+						<tr>
+							<th width="10"></th>
+							<th width="10"></th>
+							<th></th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						<!-- rows are populated from items.json via app.js -->
+					</tbody>
+				</table>
 
-			<div id="summary">
-				<div><span id="summary-text">Gesamtsumme: </span><span id="total">0</span></div>
-				<div id="save-text">(Selected values are stored in the lokal browser storage)</div>
+				<div id="summary">
+					<div><span id="summary-text">Gesamtsumme: </span><span id="total">0</span></div>
+					<div id="save-text">(Selected values are stored in the lokal browser storage)</div>
+				</div>
 			</div>
 		</main>
 
