@@ -1,0 +1,159 @@
+@use 'node_modules/styles/src/main' as *;
+
+main {
+	margin: var(--space-md) auto;
+	padding: var(--space-md);
+	position: relative;
+	padding-bottom: 120px;
+	/* central card class already sets background and border-radius when applied */
+}
+
+input {
+	&[type='number'] {
+		width: 30px;
+		text-align: center;
+		padding: 6px;
+		border-radius: 4px;
+		border: 1px solid rgba(255, 255, 255, 0.06);
+		background: var(--color-muted-bg);
+		color: var(--color-foreground);
+
+		// remove number input spinners (Chrome, Edge, Safari)
+		&::-webkit-outer-spin-button,
+		&::-webkit-inner-spin-button {
+			-webkit-appearance: none;
+			margin: 0;
+		}
+
+		// remove number input spinner (Firefox)
+		-moz-appearance: textfield;
+		appearance: textfield;
+	}
+
+	&[type='checkbox'] {
+		width: 18px;
+		height: 18px;
+
+		// visually indicate disabled checkboxes
+		&.row-check:disabled {
+			opacity: 0.6;
+			cursor: not-allowed;
+		}
+	}
+
+	&.row-count {
+		&[readonly] {
+			background: rgba(255, 255, 255, 0.02);
+			color: rgba(154, 154, 154, 0.7);
+			cursor: default;
+
+			// ensure readonly count fields do not show a focus ring if focused programmatically
+			&:focus {
+				outline: none;
+				box-shadow: none;
+			}
+		}
+	}
+}
+
+.desc {
+	position: relative;
+
+	a {
+		color: var(--color-foreground);
+		text-decoration: none;
+	}
+}
+
+.info {
+	display: inline-block;
+	margin-left: var(--space-sm);
+	width: 18px;
+	height: 18px;
+	border-radius: 50%;
+	background: var(--color-muted);
+	color: var(--color-foreground);
+	text-align: center;
+	line-height: 19px;
+	font-size: 13px;
+	cursor: pointer;
+
+	&::after {
+		content: attr(data-tip);
+		position: absolute;
+		left: 50%;
+		width: 500px;
+		transform: translateX(-50%);
+		bottom: calc(100% + 10px);
+		white-space: wrap;
+		background: var(--color-muted-bg);
+		text-align: left;
+		padding: 6px 8px;
+		border-radius: 6px;
+		font-size: 13px;
+		color: var(--color-foreground);
+		opacity: 0;
+		pointer-events: none;
+		transition: opacity 0.12s;
+	}
+
+	&:hover::after {
+		opacity: 1;
+	}
+}
+
+.value {
+	text-align: right;
+	font-variant-numeric: tabular-nums;
+}
+
+#summary {
+	//padding-top: 12px;
+	padding: 12px;
+	bottom: 10px;
+	background: var(--color-muted-bg);
+	border-radius: 6px;
+	color: var(--color-accent);
+	font-weight: 600;
+	text-align: right;
+	// keep summary visible at the bottom of the viewport by default
+	position: fixed;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 1000;
+	width: calc(100% - 40px);
+	max-width: 770px;
+
+	&.in-main {
+		position: absolute;
+		// 10px from the bottom of the main wrapper as requested
+		bottom: 10px;
+		// align inside main content area
+		left: var(--space-md);
+		right: var(--space-md);
+		transform: none;
+		width: auto;
+		max-width: none;
+		box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+	}
+}
+
+#save-text {
+	@extend .hint;
+	text-align: right;
+	font-weight: 300;
+}
+
+@media (max-width: 560px) {
+	input[type='number'] {
+		width: 56px;
+	}
+	.info::after {
+		font-size: 12px;
+	}
+
+	// reduce reserved bottom space on small screens
+	main {
+		padding-bottom: 88px;
+	}
+}

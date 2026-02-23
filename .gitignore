@@ -1,1 +1,6 @@
 start.txt
+
+# Node/Sass tooling
+node_modules/
+.sass-cache/
+

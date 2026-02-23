@@ -1,0 +1,12 @@
+{
+	"dependencies": {
+		"styles": "github:flamebuckler/styles"
+	},
+	"devDependencies": {
+		"sass": "^1.70.0"
+	},
+	"scripts": {
+		"build:css": "sass --no-source-map styles.scss styles.css",
+		"watch:css": "sass --watch styles.scss:styles.css --no-source-map"
+	}
+}
