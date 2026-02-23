@@ -25,9 +25,19 @@ input {
 	&[type='checkbox'] {
 		width: 15px;
 		height: 15px;
-		background-color: var(--color-accent);
+		/* use accent-color so the box and checkmark match our theme */
+		accent-color: var(--color-accent);
 		margin-top: -2px;
-		vertical-align: middle; /* keep checkbox centered in its table cell */ // visually indicate disabled checkboxes
+		vertical-align: middle; /* keep checkbox centered in its table cell */
+
+		/* neutral background when unchecked */
+		background-color: var(--color-muted-bg);
+
+		&:checked {
+			background-color: var(--color-accent);
+		}
+
+		// visually indicate disabled checkboxes
 		&.row-check:disabled {
 			opacity: 0.6;
 			cursor: not-allowed;
@@ -150,4 +160,12 @@ input {
 	main {
 		padding-bottom: 88px;
 	}
+}
+
+/* focus outlines */
+input:focus,
+input.row-count:focus {
+	outline: none;
+	box-shadow: 0 0 0 1px var(--color-accent);
+	border-color: var(--color-accent);
 }

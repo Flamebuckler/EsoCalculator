@@ -339,9 +339,15 @@ input[type=number] {
 input[type=checkbox] {
   width: 15px;
   height: 15px;
-  background-color: var(--color-accent);
+  /* use accent-color so the box and checkmark match our theme */
+  accent-color: var(--color-accent);
   margin-top: -2px;
   vertical-align: middle; /* keep checkbox centered in its table cell */
+  /* neutral background when unchecked */
+  background-color: var(--color-muted-bg);
+}
+input[type=checkbox]:checked {
+  background-color: var(--color-accent);
 }
 input[type=checkbox].row-check:disabled {
   opacity: 0.6;
@@ -450,4 +456,11 @@ input.row-count[readonly]:focus {
   main {
     padding-bottom: 88px;
   }
+}
+/* focus outlines */
+input:focus,
+input.row-count:focus {
+  outline: none;
+  box-shadow: 0 0 0 1px var(--color-accent);
+  border-color: var(--color-accent);
 }
