@@ -5,6 +5,7 @@
   --color-foreground: #e0e0e0;
   --color-link: #8ab4f8;
   --color-accent: #8ab4f8;
+  --color-accent-secondary: #d24547;
   /* zusätzliche Token */
   --color-card: #262626;
   --color-muted: #888888;
@@ -25,7 +26,7 @@
 
 /* Schrift‑Token und Schriftfamilien */
 :root {
-  --font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-family: Roboto, 'Helvetica Neue', Arial, sans-serif;
   /* Bei Bedarf weitere font‑Token wie --font-monospace hinzufügen */
 }
 
@@ -41,14 +42,15 @@ body {
   height: 100%;
   background-color: var(--color-background);
   color: var(--color-foreground);
-  font-family: var(--font-family); /* definiert im tokens/_fonts.scss */
+  font-family: var(--font-family);
   line-height: 1.6;
 }
 
 /* Grundlegende Typografie und Font-Fallbacks */
 body {
   margin: 0;
-  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 14px;
+  font-family: var(--font-family);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -94,8 +96,7 @@ header h1 {
   margin-bottom: 0.5rem;
 }
 
-header p,
-.tagline {
+header p {
   font-size: 1rem;
   color: #aaa;
 }
@@ -117,17 +118,6 @@ footer {
   font-weight: 700;
   font-size: 24px;
   color: var(--color-accent);
-}
-
-.tagline {
-  margin-top: 4px;
-  font-size: 14px;
-}
-
-.hint, #save-text {
-  color: var(--color-muted);
-  font-size: 13px;
-  margin-top: 8px;
 }
 
 /* Stil für Link-Kacheln ("tools") */
@@ -175,6 +165,12 @@ footer {
 
 .results-card {
   margin-top: var(--space-lg);
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--color-foreground);
 }
 
 .empty {
